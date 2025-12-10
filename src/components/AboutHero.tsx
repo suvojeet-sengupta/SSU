@@ -24,7 +24,7 @@ const AboutHero = () => {
                     <div className="flex items-center justify-center gap-3 mb-8">
                         <div className="h-[1px] w-12 bg-white/20"></div>
                         <span className="text-sm md:text-base font-medium tracking-[0.3em] text-white/50 uppercase">
-                            A Venture of Ghosal Group
+                            The Victory Venture of Ghosal Group
                         </span>
                         <div className="h-[1px] w-12 bg-white/20"></div>
                     </div>
