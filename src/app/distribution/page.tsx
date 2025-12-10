@@ -1,7 +1,13 @@
+import { Metadata } from "next";
 import DistributionHero from "@/components/DistributionHero";
 import DistributionServices from "@/components/DistributionServices";
 import SectionTitle from "@/components/SectionTitle";
 import StatsGrid from "@/components/StatsGrid";
+
+export const metadata: Metadata = {
+    title: "Distribution | Ghosal Group",
+    description: "Global music and media distribution network reaching 150+ stores worldwide.",
+};
 
 export default function DistributionPage() {
     return (

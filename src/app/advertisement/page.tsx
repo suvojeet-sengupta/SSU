@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import AdvertisementHero from "@/components/AdvertisementHero";
 import SectionTitle from "@/components/SectionTitle";
 import AdvertisementServices from "@/components/AdvertisementServices";
+
+export const metadata: Metadata = {
+    title: "Advertising | Ghosal Group",
+    description: "Innovative advertising solutions bridging brands with global audiences.",
+};
 
 export default function AdvertisementPage() {
     return (

@@ -1,8 +1,9 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Music, Globe, Users, Star, Mail, Menu, Megaphone } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -14,6 +15,8 @@ const Navbar = () => {
         { name: 'Team', icon: <Users size={16} />, href: '/team' },
         { name: 'Contact', icon: <Mail size={16} />, href: '/contact' },
     ];
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
         <motion.nav
@@ -56,11 +59,46 @@ const Navbar = () => {
                     })}
                 </div>
 
-                {/* Mobile Menu Button (Placeholder) */}
-                <button className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg">
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg relative z-50"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
                     <Menu size={24} />
                 </button>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-full left-0 right-0 bg-black border-b border-white/10 p-4 md:hidden shadow-2xl"
+                    >
+                        <div className="flex flex-col gap-2">
+                            {navItems.map((item, index) => {
+                                const isActive = pathname === item.href;
+                                return (
+                                    <Link
+                                        key={index}
+                                        href={item.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
+                                            ? 'bg-white/20 text-white'
+                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            }`}
+                                    >
+                                        {item.icon}
+                                        <span className="font-medium">{item.name}</span>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 };

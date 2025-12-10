@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import TeamHero from "@/components/TeamHero";
 import SectionTitle from "@/components/SectionTitle";
 import TeamGrid from "@/components/TeamGrid";
+
+export const metadata: Metadata = {
+    title: "Executive Team | Ghosal Group",
+    description: "Meet the strategists, creatives, and technologists behind our global success.",
+};
 
 export default function TeamPage() {
     return (
