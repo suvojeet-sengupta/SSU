@@ -18,8 +18,8 @@ export default function TeamPage() {
                     <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl mt-10">
                         <SectionTitle
                             badge="Leadership"
-                            title="Executive Team"
-                            subtitle="Meet the experts driving innovation at Ghosal Group."
+                            title="The Visionaries"
+                            subtitle="Meet the powerhouses driving the global success of Ghosal Group."
                         />
 
                         <TeamGrid />

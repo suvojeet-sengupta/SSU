@@ -10,6 +10,7 @@ const Navbar = () => {
     const navItems = [
         { name: 'Home', icon: <Home size={16} />, href: '/' },
         { name: 'Services', icon: <Music size={16} />, href: '#' },
+        { name: 'Event', icon: <Star size={16} />, href: '/event' },
         { name: 'Distribution', icon: <Globe size={16} />, href: '/distribution' },
         { name: 'Advert', icon: <Megaphone size={16} />, href: '/advertisement' },
         { name: 'Team', icon: <Users size={16} />, href: '/team' },
@@ -31,13 +32,13 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative">
                         <div className="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
-                            <span className="text-white font-bold text-xl">G</span>
+                            <span className="text-white font-bold text-xl">S</span>
                         </div>
                         {/* Glow effect */}
                         <div className="absolute inset-0 bg-cyan-500/30 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
-                    <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-                        Ghosal Group
+                    <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                        Shyam Surma CineVerse
                     </span>
                 </Link>
 
