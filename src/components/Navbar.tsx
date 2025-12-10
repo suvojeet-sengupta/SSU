@@ -11,8 +11,9 @@ const Navbar = () => {
         { name: 'Home', icon: <Home size={16} />, href: '/' },
         { name: 'Services', icon: <Music size={16} />, href: '#' },
         { name: 'Distribution', icon: <Globe size={16} />, href: '/distribution' },
-        { name: 'Advertisement', icon: <Megaphone size={16} />, href: '/advertisement' },
+        { name: 'Advert', icon: <Megaphone size={16} />, href: '/advertisement' },
         { name: 'Team', icon: <Users size={16} />, href: '/team' },
+        { name: 'About', icon: <Star size={16} />, href: '/about' },
         { name: 'Contact', icon: <Mail size={16} />, href: '/contact' },
     ];
 
