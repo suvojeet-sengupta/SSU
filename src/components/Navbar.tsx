@@ -1,12 +1,28 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Music, Globe, Users, Star, Mail, Menu, Megaphone } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Home, Music, Globe, Users, Star, Mail, Menu, Megaphone, X } from 'lucide-react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const Navbar = () => {
     const pathname = usePathname();
+    const { scrollY } = useScroll();
+    const [hidden, setHidden] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    // Track scroll direction
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() || 0;
+
+        // Hide only if scrolled down more than 100px and moving down
+        if (latest > previous && latest > 100) {
+            setHidden(true);
+        } else {
+            setHidden(false);
+        }
+    });
+
     const navItems = [
         { name: 'Home', icon: <Home size={16} />, href: '/' },
         { name: 'Services', icon: <Music size={16} />, href: '#' },
@@ -22,10 +38,13 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10"
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: -100 }
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/10"
         >
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo Section */}

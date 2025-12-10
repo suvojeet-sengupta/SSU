@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const HomeHero = () => {
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0118]">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0118] pb-20">
             {/* Cosmic Background */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-color-dodge"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0118] via-[#0a0118]/80 to-transparent"></div>
@@ -18,7 +18,7 @@ const HomeHero = () => {
                 <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse delay-300"></div>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10 text-center">
+            <div className="container mx-auto px-4 relative z-10 text-center pt-28">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -32,11 +32,11 @@ const HomeHero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-amber-500/30 bg-amber-950/30 backdrop-blur-md mb-10 shadow-[0_0_25px_rgba(245,158,11,0.2)]"
+                        className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 rounded-full border border-amber-500/30 bg-amber-950/30 backdrop-blur-md mb-10 shadow-[0_0_25px_rgba(245,158,11,0.2)]"
                     >
-                        <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse box-shadow-[0_0_10px_rgba(251,191,36,0.8)]"></div>
-                        <span className="text-amber-200 text-sm font-medium tracking-[0.2em] uppercase font-cinzel">The Victory Venture of Ghosal Group</span>
-                        <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse box-shadow-[0_0_10px_rgba(251,191,36,0.8)]"></div>
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400 animate-pulse shrink-0"></div>
+                        <span className="text-amber-200 text-xs md:text-sm font-medium tracking-[0.1em] md:tracking-[0.15em] uppercase font-cinzel whitespace-nowrap">The Victory Venture of Ghosal Group</span>
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400 animate-pulse shrink-0"></div>
                     </motion.div>
 
                     {/* Main Title - Comic/Cinematic Style */}
@@ -54,9 +54,18 @@ const HomeHero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1, duration: 1 }}
-                        className="font-great-vibes text-3xl md:text-5xl text-amber-400/90 mt-6 mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                        className="font-great-vibes text-3xl md:text-5xl text-amber-400/90 mt-6 mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
                     >
                         Targeting Success, Blessed by Khatu Shyam
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.1, duration: 0.8 }}
+                        className="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+                    >
+                        From <span className="text-purple-300 font-semibold">film production</span> and <span className="text-purple-300 font-semibold">event execution</span> to <span className="text-purple-300 font-semibold">advertising</span>, <span className="text-purple-300 font-semibold">digital marketing</span>, and <span className="text-purple-300 font-semibold">music & movie distribution</span> - <strong className="text-white">Shyam SurMa CineVerse</strong> connects creativity with global visibility.
                     </motion.p>
 
                     {/* Buttons */}
