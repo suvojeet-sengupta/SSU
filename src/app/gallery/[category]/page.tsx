@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GalleryGrid from '@/components/GalleryGrid';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -27,8 +25,6 @@ export default async function GalleryPage({ params }: PageProps) {
 
     return (
         <main className="min-h-screen bg-black text-white">
-            <Navbar />
-
             <div className="container mx-auto px-6 pt-32 pb-20">
                 <div className="mb-8">
                     <Link href="/production" className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-4">
@@ -46,8 +42,6 @@ export default async function GalleryPage({ params }: PageProps) {
                     </div>
                 )}
             </div>
-
-            <Footer />
         </main>
     );
 }
