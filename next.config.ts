@@ -3,7 +3,20 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
-    /* unoptimized: true - Removed for performance preference */
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'photos.fife.usercontent.google.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
+      },
+    ],
   },
 };
 
