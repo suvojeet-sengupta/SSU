@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import StatsGrid from './StatsGrid';
+import StatsGrid from '@/components/sections/home/StatsGrid';
 
 const DistributionHero = () => {
     return (
