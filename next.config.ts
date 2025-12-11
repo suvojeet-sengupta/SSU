@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/SSU',
+  // output: 'export', // Disabled for Cloudflare Hybrid
+  // basePath: '/SSU', // Disabled for Custom Domain/Cloudflare URL
   images: {
     remotePatterns: [
       {
