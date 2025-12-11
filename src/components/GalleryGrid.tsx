@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getImagesByTag } from '@/actions/cloudinary';
+// import { getImagesByTag } from '@/actions/cloudinary'; // Removed server action dependency
 import { CldImage } from 'next-cloudinary';
 import { Loader2, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -18,7 +18,10 @@ export default function GalleryGrid({ tag, title }: GalleryGridProps) {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const results = await getImagesByTag(tag);
+                // Fetch from our new API route
+                const response = await fetch(`/api/images?tag=${tag}`);
+                if (!response.ok) throw new Error('Failed to fetch');
+                const results = await response.json();
                 setImages(results);
             } catch (error) {
                 console.error("Failed to load images", error);

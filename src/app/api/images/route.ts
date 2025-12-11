@@ -1,22 +1,27 @@
-'use server';
+import { NextResponse } from 'next/server';
 
-// Using fetch for Edge Runtime compatibility
-// Cloudinary Node SDK uses 'http' module which is not available in Edge
-// Docs: https://cloudinary.com/documentation/search_api#search_api_reference
+export const runtime = 'edge';
 
-export async function getImagesByTag(tag: string) {
+export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const tag = searchParams.get('tag');
+
+    if (!tag) {
+        return NextResponse.json({ error: 'Tag is required' }, { status: 400 });
+    }
+
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
     const apiKey = process.env.CLOUDINARY_API_KEY;
     const apiSecret = process.env.CLOUDINARY_API_SECRET;
 
     if (!cloudName || !apiKey || !apiSecret) {
-        console.error('Missing Cloudinary credentials');
-        return [];
+        console.error('Missing Cloudinary credentials in API route');
+        return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
     }
 
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/search`;
 
-    // Basic Auth header
+    // Basic Auth header for Cloudinary API
     const auth = btoa(`${apiKey}:${apiSecret}`);
 
     try {
@@ -35,14 +40,15 @@ export async function getImagesByTag(tag: string) {
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('Cloudinary Search Error:', response.status, errorText);
-            return [];
+            console.error('Cloudinary API Error:', errorText);
+            return NextResponse.json({ error: 'Failed to fetch images' }, { status: response.status });
         }
 
         const data = await response.json();
-        return data.resources || [];
+        return NextResponse.json(data.resources || []);
+
     } catch (error) {
-        console.error('Error fetching images:', error);
-        return [];
+        console.error('API Route Error:', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
