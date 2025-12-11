@@ -25,19 +25,19 @@ const ProductionHero = () => {
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
                         <Clapperboard className="w-4 h-4 text-purple-400" />
-                        <span className="text-sm font-medium text-gray-300">Premimum Post Production Services</span>
+                        <span className="text-sm font-medium text-gray-300">Production House</span>
                     </div>
 
                     {/* Main Title */}
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                        <span className="block text-white mb-2">Leisure Films</span>
+                        <span className="block text-white mb-2">Premium Classic</span>
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-                            Studio
+                            Entertainment
                         </span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        Where vision meets precision. We craft cinematic experiences through advanced post-production.
+                        Delivering world-class production values and storytelling excellence.
                     </p>
 
                     {/* CTA Buttons */}
@@ -46,11 +46,6 @@ const ProductionHero = () => {
                             <Play className="w-5 h-5 fill-current" />
                             <span>Production Gallery</span>
                             <div className="absolute inset-0 rounded-full bg-white/50 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </Link>
-
-                        <Link href="/gallery/post-production" className="px-8 py-4 bg-white/5 text-white rounded-full font-bold text-lg hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all flex items-center gap-2">
-                            <Film className="w-5 h-5" />
-                            <span>Post-Production Gallery</span>
                         </Link>
                     </div>
                 </motion.div>

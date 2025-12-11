@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Video, Mic, CheckCircle } from 'lucide-react';
+import { Award, Video, Mic, CheckCircle, Film } from 'lucide-react';
+import Link from 'next/link';
 
 const ProductionAbout = () => {
     return (
@@ -35,7 +36,7 @@ const ProductionAbout = () => {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap gap-4 mt-8">
+                        <div className="flex flex-wrap gap-4 mt-8 mb-8">
                             <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
                                 <Video className="text-purple-400" size={20} />
                                 <span className="font-medium">Fully Equipped Studio</span>
@@ -49,6 +50,11 @@ const ProductionAbout = () => {
                                 <span className="font-medium">Timely Delivery</span>
                             </div>
                         </div>
+
+                        <Link href="/gallery/post-production" className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25">
+                            <Film className="w-5 h-5" />
+                            <span>View Post-Production Gallery</span>
+                        </Link>
                     </motion.div>
 
                     {/* Visual/Image Side */}
