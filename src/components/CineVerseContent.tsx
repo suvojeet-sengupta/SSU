@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Clapperboard, Megaphone, Users, Tv, Mic2, Video, Globe, Music, Target } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
+import AdvertisementServices from './AdvertisementServices';
 
 const CineVerseContent = () => {
     return (
@@ -59,66 +60,7 @@ const CineVerseContent = () => {
                 <div className="mb-24">
                     <SectionTitle badge="Services" title="Core Services" subtitle="Tailored solutions for maximum impact." />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                        {/* Service 1 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                        >
-                            <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6 border border-orange-500/20 group-hover:scale-110 transition-transform">
-                                <Clapperboard className="w-8 h-8 text-orange-400" />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4">Movie, Short Films & Music Promotion</h3>
-                            <p className="text-gray-400 leading-relaxed mb-6">
-                                We handle complete digital promotion including:
-                            </p>
-                            <ul className="space-y-3">
-                                {[
-                                    "Social media marketing",
-                                    "Trailer launch campaigns",
-                                    "Poster & teaser promotions",
-                                    "Targeted audience outreach"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-gray-300">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        {/* Service 2 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            viewport={{ once: true }}
-                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                        >
-                            <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform">
-                                <Globe className="w-8 h-8 text-cyan-400" />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4">OTT & Music Distribution</h3>
-                            <p className="text-gray-400 leading-relaxed mb-6">
-                                Professional distribution services ensuring your content reaches the platforms that matter.
-                            </p>
-                            <ul className="space-y-3">
-                                {[
-                                    "Distribution to leading OTT platforms",
-                                    "YouTube Content ID setup",
-                                    "Rights protection & Revenue maximization",
-                                    "Global reach for independent creators"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-gray-300">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    </div>
+                    <AdvertisementServices />
                 </div>
 
             </div>

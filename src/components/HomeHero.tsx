@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import Link from 'next/link';
+import ParallaxText, { RevealText } from '@/components/ui/ParallaxText';
 
 const HomeHero = () => {
     return (
@@ -10,6 +11,16 @@ const HomeHero = () => {
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-color-dodge"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0118] via-[#0a0118]/80 to-transparent"></div>
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.15),transparent_70%)]"></div>
+
+            {/* Parallax Background Text */}
+            <div className="absolute top-1/4 left-0 w-full opacity-5 pointer-events-none select-none z-0">
+                <ParallaxText baseVelocity={-5} className="font-black text-9xl text-white">
+                    CINEMA MUSIC EVENTS DISTRIBUTION PRODUCTION ADVERTISING
+                </ParallaxText>
+                <ParallaxText baseVelocity={5} className="font-black text-9xl text-white mt-4">
+                    CREATIVITY INNOVATION GLOBAL VISION SHYAM SURMA
+                </ParallaxText>
+            </div>
 
             {/* Floating Particles/Stars (Simplified CSS/Divs) */}
             <div className="absolute inset-0 opacity-20">
@@ -42,10 +53,10 @@ const HomeHero = () => {
                     {/* Main Title - Comic/Cinematic Style */}
                     <h1 className="relative font-cinzel font-black tracking-tight leading-none mb-4 group">
                         <span className="block text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter">
-                            SHYAM SURMA
+                            <RevealText text="SHYAM SURMA" className="justify-center" />
                         </span>
                         <span className="block text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-b from-purple-200 via-purple-400 to-indigo-600 drop-shadow-[0_2px_10px_rgba(147,51,234,0.5)] mt-2">
-                            CINEVERSE
+                            <RevealText text="CINEVERSE" className="justify-center" />
                         </span>
                     </h1>
 

@@ -2,19 +2,18 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Music, Globe, Users, Star, Mail, Menu, Megaphone, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { NAV_ITEMS } from '@/data/site';
 
 const Navbar = () => {
     const pathname = usePathname();
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
 
     // Track scroll direction
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() || 0;
-
         // Hide only if scrolled down more than 100px and moving down
         if (latest > previous && latest > 100) {
             setHidden(true);
@@ -22,17 +21,6 @@ const Navbar = () => {
             setHidden(false);
         }
     });
-
-    const navItems = [
-        { name: 'Home', icon: <Home size={16} />, href: '/' },
-        { name: 'Services', icon: <Music size={16} />, href: '#' },
-        { name: 'Event', icon: <Star size={16} />, href: '/event' },
-        { name: 'Distribution', icon: <Globe size={16} />, href: '/distribution' },
-        { name: 'Advert', icon: <Megaphone size={16} />, href: '/advertisement' },
-        { name: 'Team', icon: <Users size={16} />, href: '/team' },
-        { name: 'About', icon: <Star size={16} />, href: '/about' },
-        { name: 'Contact', icon: <Mail size={16} />, href: '/contact' },
-    ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -63,18 +51,20 @@ const Navbar = () => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-2 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-md">
-                    {navItems.map((item, index) => {
+                    {NAV_ITEMS.map((item, index) => {
                         const isActive = pathname === item.href;
+                        const Icon = item.icon;
                         return (
                             <Link
                                 key={index}
                                 href={item.href}
+                                aria-label={item.name}
                                 className={`flex items-center gap-2 px-4 py-2 text-sm rounded-full transition-all duration-300 ${isActive
                                     ? 'bg-white/20 text-white shadow-lg border border-white/10'
                                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                                     }`}
                             >
-                                {item.icon} {item.name}
+                                <Icon size={16} /> {item.name}
                             </Link>
                         );
                     })}
@@ -82,10 +72,11 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg relative z-50"
+                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg relative z-50 transition-colors"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    <Menu size={24} />
+                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
@@ -93,26 +84,29 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 right-0 bg-black border-b border-white/10 p-4 md:hidden shadow-2xl"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-3xl border-b border-white/10 overflow-hidden md:hidden shadow-2xl"
                     >
-                        <div className="flex flex-col gap-2">
-                            {navItems.map((item, index) => {
+                        <div className="p-4 flex flex-col gap-2">
+                            {NAV_ITEMS.map((item, index) => {
                                 const isActive = pathname === item.href;
+                                const Icon = item.icon;
                                 return (
                                     <Link
                                         key={index}
                                         href={item.href}
                                         onClick={() => setIsMobileMenuOpen(false)}
-                                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
-                                            ? 'bg-white/20 text-white'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                        className={`flex items-center gap-4 px-6 py-4 rounded-xl transition-all border ${isActive
+                                            ? 'bg-white/10 text-white border-white/10'
+                                            : 'text-gray-400 border-transparent hover:bg-white/5 hover:text-white'
                                             }`}
                                     >
-                                        {item.icon}
-                                        <span className="font-medium">{item.name}</span>
+                                        <div className={`p-2 rounded-lg ${isActive ? 'bg-cyan-500/20 text-cyan-400' : 'bg-white/5'}`}>
+                                            <Icon size={20} />
+                                        </div>
+                                        <span className="font-medium text-lg">{item.name}</span>
                                     </Link>
                                 );
                             })}

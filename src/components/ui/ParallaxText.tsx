@@ -1,0 +1,77 @@
+'use client';
+
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+
+interface ParallaxTextProps {
+    children: string;
+    className?: string;
+    baseVelocity?: number;
+}
+
+export default function ParallaxText({ children, className = "", baseVelocity = 100 }: ParallaxTextProps) {
+    const baseX = useTransform(useScroll().scrollY, (value) => {
+        // Move text horizontally based on scroll
+        return value * (baseVelocity / 1000);
+    });
+
+    return (
+        <div className={`overflow-hidden whitespace-nowrapflex flex-nowrap ${className}`}>
+            <motion.div
+                style={{ x: baseX }}
+                className="text-nowrap whitespace-nowrap will-change-transform"
+            >
+                {children}
+            </motion.div>
+        </div>
+    );
+}
+
+export function RevealText({ text, className = "" }: { text: string, className?: string }) {
+    const words = text.split(" ");
+
+    const container = {
+        hidden: { opacity: 0 },
+        visible: (i = 1) => ({
+            opacity: 1,
+            transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+        }),
+    };
+
+    const child = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+            },
+        },
+    };
+
+    return (
+        <motion.div
+            className={`flex flex-wrap ${className}`}
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
+            {words.map((word, index) => (
+                <motion.span variants={child} style={{ marginRight: "0.25em" }} key={index}>
+                    {word}
+                </motion.span>
+            ))}
+        </motion.div>
+    );
+}

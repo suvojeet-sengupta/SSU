@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Cinzel, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +27,30 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Ghosal Group - Worldwide Distribution",
-  description: "India's Leading Music Platform",
+  title: "Ghosal Group - Worldwide Distribution & Advertising",
+  description: "India's Leading Music Platform. Official distribution, advertising, and event management wing of Ghosal Group.",
+  openGraph: {
+    title: "Ghosal Group - Shyam Surma CineVerse",
+    description: "Empowering artists and brands with global distribution and advertising solutions.",
+    url: "https://ghosalgroup.com", // Replace with actual URL
+    siteName: "Ghosal Group",
+    images: [
+      {
+        url: "/og-image.jpg", // Ensure this image exists in public/
+        width: 1200,
+        height: 630,
+        alt: "Ghosal Group Banner",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ghosal Group",
+    description: "Worldwide Distribution & Advertising.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -41,7 +64,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${greatVibes.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>
