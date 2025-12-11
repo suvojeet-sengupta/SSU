@@ -17,7 +17,7 @@ export async function getImagesByTag(tag: string) {
     const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/search`;
 
     // Basic Auth header
-    const auth = Buffer.from(`${apiKey}:${apiSecret}`).toString('base64');
+    const auth = btoa(`${apiKey}:${apiSecret}`);
 
     try {
         const response = await fetch(url, {
