@@ -10,6 +10,8 @@ const categoryTitles: Record<string, string> = {
     'post-production': 'Post-Production Gallery'
 };
 
+export const runtime = 'edge';
+
 interface PageProps {
     params: Promise<{
         category: string;
