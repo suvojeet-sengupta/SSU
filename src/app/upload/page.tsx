@@ -3,8 +3,8 @@
 import { CldUploadButton } from 'next-cloudinary';
 import { Upload, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 export default function UploadPage() {
     const [lastUpload, setLastUpload] = useState<string | null>(null);

@@ -1,4 +1,4 @@
-import GalleryGrid from '@/components/GalleryGrid';
+import GalleryGrid from '@/components/common/GalleryGrid';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 

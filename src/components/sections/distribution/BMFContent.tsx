@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Globe, ShieldCheck, CalendarClock, Barcode, LineChart, Database, CheckCircle2 } from 'lucide-react';
-import SectionTitle from '@/components/SectionTitle';
+import SectionTitle from '@/components/common/SectionTitle';
 
 const services = [
     {

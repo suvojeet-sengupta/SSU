@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ContactContent from "@/components/ContactContent";
+import ContactContent from "@/components/sections/contact/ContactContent";
 
 export const metadata: Metadata = {
     title: "Contact Us | Ghosal Group",

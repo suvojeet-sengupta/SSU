@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import AdvertisementHero from "@/components/AdvertisementHero";
-import CineVerseContent from "@/components/CineVerseContent";
+import AdvertisementHero from "@/components/sections/advertisement/AdvertisementHero";
+import CineVerseContent from "@/components/sections/advertisement/CineVerseContent";
 
 export const metadata: Metadata = {
     title: "Shyam Surma CineVerse | Advertising",

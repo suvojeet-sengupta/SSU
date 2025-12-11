@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clapperboard, Film } from 'lucide-react';
-import ProductionHero from '@/components/ProductionHero';
-import ProductionAbout from '@/components/ProductionAbout';
-import ProductionServices from '@/components/ProductionServices';
+import ProductionHero from './ProductionHero';
+import ProductionAbout from './ProductionAbout';
+import ProductionServices from './ProductionServices';
 
 export default function ProductionTabs() {
     const [activeTab, setActiveTab] = useState<'production' | 'post-production'>('production');
@@ -18,8 +18,8 @@ export default function ProductionTabs() {
                     <button
                         onClick={() => setActiveTab('production')}
                         className={`relative w-full sm:w-1/2 flex items-center justify-center gap-3 px-8 py-4 rounded-xl md:rounded-full text-lg font-bold transition-all duration-300 ${activeTab === 'production'
-                                ? 'text-black'
-                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            ? 'text-black'
+                            : 'text-gray-400 hover:text-white hover:bg-white/5'
                             }`}
                     >
                         {activeTab === 'production' && (
@@ -37,8 +37,8 @@ export default function ProductionTabs() {
                     <button
                         onClick={() => setActiveTab('post-production')}
                         className={`relative w-full sm:w-1/2 flex items-center justify-center gap-3 px-8 py-4 rounded-xl md:rounded-full text-lg font-bold transition-all duration-300 ${activeTab === 'post-production'
-                                ? 'text-white'
-                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            ? 'text-white'
+                            : 'text-gray-400 hover:text-white hover:bg-white/5'
                             }`}
                     >
                         {activeTab === 'post-production' && (

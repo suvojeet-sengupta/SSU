@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import DistributionHero from "@/components/DistributionHero";
-import BMFContent from "@/components/BMFContent";
-import BMFReleases from "@/components/BMFReleases";
+import DistributionHero from "@/components/sections/distribution/DistributionHero";
+import BMFContent from "@/components/sections/distribution/BMFContent";
+import BMFReleases from "@/components/sections/distribution/BMFReleases";
 
 export const metadata: Metadata = {
     title: "BMF Music | Distribution",

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import TeamHero from "@/components/TeamHero";
-import SectionTitle from "@/components/SectionTitle";
-import TeamGrid from "@/components/TeamGrid";
+import TeamHero from "@/components/sections/team/TeamHero";
+import SectionTitle from "@/components/common/SectionTitle";
+import TeamGrid from "@/components/sections/team/TeamGrid";
 
 export const metadata: Metadata = {
     title: "Executive Team | Ghosal Group",

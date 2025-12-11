@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Building2, Film, Music, Megaphone, CheckCircle2, Heart } from 'lucide-react';
-import SectionTitle from '@/components/SectionTitle';
+import SectionTitle from '@/components/common/SectionTitle';
 
 const companies = [
     {

@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Play, Music2, ExternalLink } from 'lucide-react';
-import SectionTitle from '@/components/SectionTitle';
+import SectionTitle from '@/components/common/SectionTitle';
 import { usePlayer } from '@/context/PlayerContext';
 
 const releases = [

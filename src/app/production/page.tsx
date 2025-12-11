@@ -1,8 +1,8 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ProductionTabs from '@/components/ProductionTabs';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import ProductionTabs from '@/components/sections/production/ProductionTabs';
 
 export default function ProductionPage() {
     return (

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import AboutHero from "@/components/AboutHero";
-import AboutContent from "@/components/AboutContent";
+import AboutHero from "@/components/sections/about/AboutHero";
+import AboutContent from "@/components/sections/about/AboutContent";
 
 export const metadata: Metadata = {
     title: "About Us | Ghosal Group",

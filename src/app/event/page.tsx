@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import EventHero from "@/components/EventHero";
-import EventContent from "@/components/EventContent";
+import EventHero from "@/components/sections/event/EventHero";
+import EventContent from "@/components/sections/event/EventContent";
 
 export const metadata: Metadata = {
     title: "Ghosal Event | Celebrating Since 1995",

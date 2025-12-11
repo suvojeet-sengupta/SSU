@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import HomeHero from "@/components/HomeHero";
-import HomeServices from "@/components/HomeServices";
-import FeaturedWorks from "@/components/FeaturedWorks";
-import GroupEcosystem from "@/components/GroupEcosystem";
-import SectionTitle from "@/components/SectionTitle";
+import HomeHero from "@/components/sections/home/HomeHero";
+import HomeServices from "@/components/sections/home/HomeServices";
+import FeaturedWorks from "@/components/sections/home/FeaturedWorks";
+import GroupEcosystem from "@/components/sections/home/GroupEcosystem";
+import SectionTitle from "@/components/common/SectionTitle";
 
 export const metadata: Metadata = {
   title: "Shyam Surma CineVerse | Ghosal Group",

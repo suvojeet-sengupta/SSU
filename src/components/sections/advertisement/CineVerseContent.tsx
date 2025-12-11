@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Clapperboard, Megaphone, Users, Tv, Mic2, Video, Globe, Music, Target } from 'lucide-react';
-import SectionTitle from '@/components/SectionTitle';
+import SectionTitle from '@/components/common/SectionTitle';
 import AdvertisementServices from './AdvertisementServices';
 
 const CineVerseContent = () => {
