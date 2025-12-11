@@ -51,7 +51,7 @@ const teamMembers = [
     {
         name: "Suvojeet Sengupta",
         role: "CTO & Web Developer",
-        image: "/team/suvojeet-profile.jpg",
+        image: "/SSU/team/suvojeet-profile.jpg",
         fallbackImage: "https://ui-avatars.com/api/?name=Suvojeet+Sengupta&background=1e293b&color=fff&size=512",
         bio: "Architecting the digital future. Transforming vision into reality through cutting-edge web & blockchain technology.",
         quote: "Code is poetry written for machines.",

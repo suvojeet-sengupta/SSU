@@ -5,7 +5,7 @@ const TeamHero = () => {
     return (
         <section className="relative min-h-[60vh] pt-32 flex items-center justify-center overflow-hidden bg-black">
             {/* Background Effects */}
-            <div className="absolute inset-0 bg-[url('/hero-bg-grid.svg')] opacity-10"></div>
+            <div className="absolute inset-0 bg-[url('/SSU/hero-bg-grid.svg')] opacity-10"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
 
             <div className="container mx-auto px-6 relative z-10 text-center">

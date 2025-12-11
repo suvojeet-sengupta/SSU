@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030712]">
             {/* Dynamic Background */}
-            <div className="absolute inset-0 bg-[url('/hero-bg-grid.svg')] opacity-20"></div>
+            <div className="absolute inset-0 bg-[url('/SSU/hero-bg-grid.svg')] opacity-20"></div>
             <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
             <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[100px] mix-blend-screen"></div>
 
