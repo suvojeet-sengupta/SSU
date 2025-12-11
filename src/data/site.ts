@@ -1,8 +1,8 @@
-import { Home, Music, Globe, Users, Star, Mail, Megaphone } from 'lucide-react';
+import { Home, Music, Globe, Users, Star, Mail, Megaphone, Clapperboard } from 'lucide-react';
 
 export const NAV_ITEMS = [
     { name: 'Home', icon: Home, href: '/' },
-    { name: 'Services', icon: Music, href: '#services' }, // Updated href for anchor
+    { name: 'Production', icon: Clapperboard, href: '/production' },
     { name: 'Event', icon: Star, href: '/event' },
     { name: 'Distribution', icon: Globe, href: '/distribution' },
     { name: 'Advert', icon: Megaphone, href: '/advertisement' },
