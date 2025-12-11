@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const ProductionHero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black py-20">
+        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-black py-10">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
