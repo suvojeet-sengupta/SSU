@@ -1,13 +1,15 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import { Linkedin, Twitter, Mail, Award, Globe, Code2, X, Clapperboard } from 'lucide-react';
+import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const teamMembers = [
     {
         name: "Ranjit Ghosal",
         role: "Chairman",
-        image: "https://ui-avatars.com/api/?name=Ranjit+Ghosal&background=1e293b&color=fff&size=512",
+        image: "ranjit-profile",
         bio: "The visionary backbone of Ghosal Group. Founded Ghosal Event in 1995 and paved the way for a global media ecosystem.",
         quote: "Vision is the art of seeing what is invisible to others.",
         color: "group-hover:text-purple-400",
@@ -17,9 +19,9 @@ const teamMembers = [
     },
     {
         name: "Surojit Ghosal",
-        role: "Director",
-        image: "https://ui-avatars.com/api/?name=Surojit+Ghosal&background=1e293b&color=fff&size=512",
-        bio: "Driving strategic growth and international expansion. Spearheaded the launch of BMF Music.",
+        role: "Director & Filmmaker",
+        image: "surojit-profile",
+        bio: "Surojit Ghosal is a filmmaker and assistant director known for his dynamic storytelling, strong visual sense and hands-on expertise in cinematography, lighting and post-production. With several years of experience in creative direction, short films, music videos and commercial production, he represents the new generation of passionate and technically skilled filmmakers. He completed his professional training in filmmaking from T-Series StageWorks Academy, Delhi, and has also trained under renowned institutes such as Arunodoi Ghosh Photography Workshop. Over the years, he has worked on 10+ films, short films and music projects, contributing as an Assistant Director, Associate Director, Cinematographer and Creative Supervisor.",
         quote: "Innovation is the key to unlocking global potential.",
         color: "group-hover:text-cyan-400",
         border: "group-hover:border-cyan-500/50",
@@ -28,10 +30,10 @@ const teamMembers = [
     },
     {
         name: "Mouma Sengupta",
-        role: "Co-Director",
-        image: "https://ui-avatars.com/api/?name=Mouma+Sengupta&background=1e293b&color=fff&size=512",
-        bio: "Chief Executive Officer ensuring operational excellence and sustainable growth across all group verticals.",
-        quote: "Excellence is not an act, but a habit.",
+        role: "Co-Director & CEO",
+        image: "mouma-profile",
+        bio: "Mouma Sengupta is a young, dynamic and highly creative Digital Marketing Professional, known for her expertise in social media promotion, brand strategy and affordable marketing solutions for artists and creators. She leads the Advertisement & Digital Marketing Wing of the Ghosal Group. Her mission is to provide every creator access to professional, affordable and impactful marketing. Her key responsibilities include Movie & Music Promotion, Social Media Campaigns, and Digital Strategy.",
+        quote: "Great talent deserves great visibility — and the right marketing makes it possible.",
         color: "group-hover:text-amber-400",
         border: "group-hover:border-amber-500/50",
         gradient: "from-amber-500/20 to-orange-500/5",
@@ -40,7 +42,7 @@ const teamMembers = [
     {
         name: "Riya Ghosal",
         role: "Managing Director",
-        image: "https://ui-avatars.com/api/?name=Riya+Ghosal&background=1e293b&color=fff&size=512",
+        image: "riya-profile",
         bio: "Leading BMF Music with precision. Oversees global distribution, rights management, and artist relations.",
         quote: "Music is the universal language of mankind.",
         color: "group-hover:text-pink-400",
@@ -48,13 +50,12 @@ const teamMembers = [
         gradient: "from-pink-500/20 to-rose-500/5",
         icon: <Award className="w-5 h-5" />
     },
-
     {
         name: "Suvojeet Sengupta",
         role: "CTO & Web Developer",
-        image: "/SSU/team/suvojeet-profile.jpg",
+        image: "suvojeet-profile",
         fallbackImage: "https://ui-avatars.com/api/?name=Suvojeet+Sengupta&background=1e293b&color=fff&size=512",
-        bio: "The Mastermind behind the entire digital infrastructure of Ghosal Group. As the Lead Full-Stack Developer, he single-handedly architected and built this platform from the ground up, blending creativity with cutting-edge technology.",
+        bio: "I am a Full-Stack Software Developer with over 3 years of experience in building high-performance websites and mobile applications. In a digital world cluttered with complexity, I focus on clarity and efficiency. My approach is simple: I combine clean code with intuitive design to create software that solves real-world problems. Whether you are a startup looking to launch your MVP or an established business aiming to scale, I provide the technical expertise to make it happen. What I do best: Web Development (Responsive, fast, and SEO-friendly architectures), Mobile Apps (Cross-platform solutions), and Software Engineering (Scalable backend systems and custom software tools).",
         quote: "Code is poetry written for machines.",
         color: "group-hover:text-green-400",
         border: "group-hover:border-green-500/50",
@@ -64,12 +65,12 @@ const teamMembers = [
     {
         name: "Subrata Chowdhury",
         role: "Film Maker & Editor",
-        image: "https://ui-avatars.com/api/?name=Subrata+Chowdhury&background=1e293b&color=fff&size=512",
-        bio: "",
+        image: "subrata-profile",
+        bio: "With over 15 years of experience in the media and entertainment industry, Subrata Chowdhury is a seasoned Filmmaker and Editor known for his visual storytelling and technical precision. His journey is defined by versatility—seamlessly transitioning between the high-paced world of broadcast journalism and the creative depth of cinema. His portfolio includes 300+ News Episodes, 20+ Feature Movies, 50+ Short Films, and 60+ Music Videos.",
         quote: "Code is poetry written for machines.",
-        color: "group-hover:text-green-400",
-        border: "group-hover:border-green-500/50",
-        gradient: "from-green-500/20 to-emerald-500/5",
+        color: "group-hover:text-pink-400",
+        border: "group-hover:border-pink-500/50",
+        gradient: "from-pink-500/20 to-rose-500/5",
         icon: <Award className="w-5 h-5" />
     }
 ];
@@ -100,17 +101,27 @@ const TeamGrid = () => {
                                 {/* Image Container */}
                                 <div className="relative mb-6">
                                     <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-45 translate-x-[-100%] group-hover:animate-shine`}></div>
-                                    <div className={`w-36 h-36 rounded-full p-[2px] bg-gradient-to-tr from-gray-700 to-gray-900 ${member.border} transition-colors duration-500`}>
-                                        <img
-                                            src={member.image}
-                                            alt={member.name}
-                                            className="w-full h-full rounded-full object-cover bg-black"
-                                            onError={(e) => {
-                                                if (member.fallbackImage) {
-                                                    e.currentTarget.src = member.fallbackImage;
-                                                }
-                                            }}
-                                        />
+                                    <div className={`w-36 h-36 rounded-full p-[2px] bg-gradient-to-tr from-gray-700 to-gray-900 ${member.border} transition-colors duration-500 overflow-hidden`}>
+                                        {member.image.startsWith('http') || member.image.startsWith('/') ? (
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full rounded-full object-cover bg-black"
+                                                onError={(e) => {
+                                                    if (member.fallbackImage) {
+                                                        e.currentTarget.src = member.fallbackImage;
+                                                    }
+                                                }}
+                                            />
+                                        ) : (
+                                            <CloudinaryImage
+                                                src={member.image}
+                                                alt={member.name}
+                                                width="150"
+                                                height="150"
+                                                className="w-full h-full rounded-full object-cover bg-black"
+                                            />
+                                        )}
                                     </div>
                                     <div className={`absolute bottom-0 right-0 w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center border border-white/10 ${member.color} shadow-lg group-hover:scale-110 transition-transform`}>
                                         {member.icon}
@@ -160,18 +171,27 @@ const TeamGrid = () => {
                             </button>
 
                             {/* Sidebar / Image */}
-                            <div className="w-full md:w-2/5 relative h-64 md:h-auto">
+                            <div className="w-full md:w-2/5 relative h-64 md:h-auto overflow-hidden">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${selectedMember.gradient} opacity-20`}></div>
-                                <img
-                                    src={selectedMember.image}
-                                    alt={selectedMember.name}
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        if (selectedMember.fallbackImage) {
-                                            e.currentTarget.src = selectedMember.fallbackImage;
-                                        }
-                                    }}
-                                />
+                                {selectedMember.image.startsWith('http') || selectedMember.image.startsWith('/') ? (
+                                    <img
+                                        src={selectedMember.image}
+                                        alt={selectedMember.name}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            if (selectedMember.fallbackImage) {
+                                                e.currentTarget.src = selectedMember.fallbackImage;
+                                            }
+                                        }}
+                                    />
+                                ) : (
+                                    <CloudinaryImage
+                                        src={selectedMember.image}
+                                        alt={selectedMember.name}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent md:bg-gradient-to-r"></div>
                             </div>
 
