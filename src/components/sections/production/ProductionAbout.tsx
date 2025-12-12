@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Video, Mic, CheckCircle, Film } from 'lucide-react';
+import { Award, Video, CheckCircle, Film } from 'lucide-react';
 import Link from 'next/link';
+import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const ProductionAbout = () => {
     return (
@@ -21,12 +22,21 @@ const ProductionAbout = () => {
                             15+ Years of Experience
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            About <span className="text-blue-500">Leisure Films Studio</span>
+                            About <span className="text-blue-500">Leisure Film Studio</span>
                         </h2>
+
+                        <div className="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-lg relative h-24 w-full max-w-md">
+                            <CloudinaryImage
+                                src="l3_b68e4a"
+                                alt="Leisure Film Studio Banner"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
 
                         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                             <p>
-                                <strong>Leisure Films Studio</strong> is a professional Film Post-Production Company with over <strong>15+ years of industry experience</strong>, delivering high-quality and reliable post-production services.
+                                <strong>Leisure Film Studio</strong> is a professional Film Post-Production Company with over <strong>15+ years of industry experience</strong>, delivering high-quality and reliable post-production services.
                             </p>
                             <p>
                                 Led by <strong>Director Subrata Chowdhury</strong>, the studio has worked on numerous Bengali feature films, short films, music videos, documentaries, and news content—completing their full post-production workflow with excellence.
@@ -65,17 +75,26 @@ const ProductionAbout = () => {
                         transition={{ duration: 0.8 }}
                         className="relative"
                     >
-                        <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800 relative group">
-                            {/* Placeholder for Studio Image - Using a gradient/abstract for now if no image provided */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-                                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?q=80&w=2064&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
-                                <div className="z-10 text-center p-6">
-                                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                                        <Mic className="w-10 h-10 text-white" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white">Professional Dubbing</h3>
-                                    <p className="text-gray-400">High-end recording facilities</p>
-                                </div>
+                        <div className="aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800 relative group flex items-center justify-center">
+                            {/* Background Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-red-900/40 to-black/80 z-0"></div>
+
+                            <div className="z-10 text-center p-6 relative flex flex-col items-center">
+                                <motion.div
+                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                    className="w-40 h-40 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border border-white/20 shadow-xl overflow-hidden p-4"
+                                >
+                                    <CloudinaryImage
+                                        src="l1_l6pbra"
+                                        alt="Leisure Film Studio Logo"
+                                        width="150"
+                                        height="150"
+                                        className="object-contain w-full h-full"
+                                    />
+                                </motion.div>
+                                <h3 className="text-3xl font-bold text-white tracking-wide">Leisure Film Studio</h3>
+                                <p className="text-gray-400 mt-2 font-medium">Professional Post-Production</p>
                             </div>
                         </div>
                         {/* Decorative elements */}

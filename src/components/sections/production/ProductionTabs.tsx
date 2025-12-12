@@ -6,6 +6,7 @@ import { Clapperboard, Film } from 'lucide-react';
 import ProductionHero from './ProductionHero';
 import ProductionAbout from './ProductionAbout';
 import ProductionServices from './ProductionServices';
+import ClassicProductionContent from './ClassicProductionContent';
 
 export default function ProductionTabs() {
     const [activeTab, setActiveTab] = useState<'production' | 'post-production'>('production');
@@ -67,6 +68,7 @@ export default function ProductionTabs() {
                             transition={{ duration: 0.3 }}
                         >
                             <ProductionHero />
+                            <ClassicProductionContent />
                         </motion.div>
                     ) : (
                         <motion.div

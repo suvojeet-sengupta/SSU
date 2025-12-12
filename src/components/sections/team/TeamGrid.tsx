@@ -27,6 +27,17 @@ const teamMembers = [
         icon: <Globe className="w-5 h-5" />
     },
     {
+        name: "Mouma Sengupta",
+        role: "Co-Director",
+        image: "https://ui-avatars.com/api/?name=Mouma+Sengupta&background=1e293b&color=fff&size=512",
+        bio: "Chief Executive Officer ensuring operational excellence and sustainable growth across all group verticals.",
+        quote: "Excellence is not an act, but a habit.",
+        color: "group-hover:text-amber-400",
+        border: "group-hover:border-amber-500/50",
+        gradient: "from-amber-500/20 to-orange-500/5",
+        icon: <Award className="w-5 h-5" />
+    },
+    {
         name: "Riya Ghosal",
         role: "Managing Director",
         image: "https://ui-avatars.com/api/?name=Riya+Ghosal&background=1e293b&color=fff&size=512",
@@ -37,28 +48,29 @@ const teamMembers = [
         gradient: "from-pink-500/20 to-rose-500/5",
         icon: <Award className="w-5 h-5" />
     },
-    {
-        name: "Mouma Sengupta",
-        role: "Chief Executive Officer",
-        image: "https://ui-avatars.com/api/?name=Mouma+Sengupta&background=1e293b&color=fff&size=512",
-        bio: "Chief Executive Officer ensuring operational excellence and sustainable growth across all group verticals.",
-        quote: "Excellence is not an act, but a habit.",
-        color: "group-hover:text-amber-400",
-        border: "group-hover:border-amber-500/50",
-        gradient: "from-amber-500/20 to-orange-500/5",
-        icon: <Award className="w-5 h-5" />
-    },
+
     {
         name: "Suvojeet Sengupta",
         role: "CTO & Web Developer",
         image: "/SSU/team/suvojeet-profile.jpg",
         fallbackImage: "https://ui-avatars.com/api/?name=Suvojeet+Sengupta&background=1e293b&color=fff&size=512",
-        bio: "Architecting the digital future. Transforming vision into reality through cutting-edge web & blockchain technology.",
+        bio: "The Mastermind behind the entire digital infrastructure of Ghosal Group. As the Lead Full-Stack Developer, he single-handedly architected and built this platform from the ground up, blending creativity with cutting-edge technology.",
         quote: "Code is poetry written for machines.",
         color: "group-hover:text-green-400",
         border: "group-hover:border-green-500/50",
         gradient: "from-green-500/20 to-emerald-500/5",
         icon: <Code2 className="w-5 h-5" />
+    },
+    {
+        name: "Subrata Chowdhury",
+        role: "Film Maker & Editor",
+        image: "https://ui-avatars.com/api/?name=Subrata+Chowdhury&background=1e293b&color=fff&size=512",
+        bio: "",
+        quote: "Code is poetry written for machines.",
+        color: "group-hover:text-green-400",
+        border: "group-hover:border-green-500/50",
+        gradient: "from-green-500/20 to-emerald-500/5",
+        icon: <Award className="w-5 h-5" />
     }
 ];
 
