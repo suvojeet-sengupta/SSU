@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Music, Megaphone, ArrowRight } from 'lucide-react';
+import { Music, Megaphone, ArrowRight, Building2, Clapperboard, Film } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -17,6 +17,27 @@ const services = [
         description: "Strategic campaigns across social media, YouTube, and digital platforms to amplify your reach.",
         link: "/advertisement",
         color: "pink"
+    },
+    {
+        icon: <Building2 size={32} />,
+        title: "Event Management",
+        description: "Executing seamless corporate events, concerts, and large-scale productions with precision.",
+        link: "/event",
+        color: "purple"
+    },
+    {
+        icon: <Clapperboard size={32} />,
+        title: "Production House",
+        description: "Full-scale film production services from pre-production to filming and execution.",
+        link: "/production",
+        color: "yellow"
+    },
+    {
+        icon: <Film size={32} />,
+        title: "Post-Production",
+        description: "State-of-the-art editing, VFX, color grading, and sound design for cinematic excellence.",
+        link: "/production",
+        color: "blue"
     }
 ];
 
@@ -24,7 +45,7 @@ const HomeServices = () => {
     return (
         <section className="py-20 bg-black">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}

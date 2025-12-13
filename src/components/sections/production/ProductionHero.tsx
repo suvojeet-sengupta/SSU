@@ -1,17 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Play, Film, Clapperboard } from 'lucide-react';
+import { Play, Clapperboard } from 'lucide-react';
 import Link from 'next/link';
+import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const ProductionHero = () => {
     return (
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-black py-10">
             {/* Background Effects */}
+            {/* Background Effects */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
                 <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-purple-500/10 rounded-full blur-[100px] animate-pulse delay-1000" />
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574375927938-d5a98e8efe85?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 opacity-40">
+                    <CloudinaryImage
+                        src="PCE-banner"
+                        alt="Production Banner"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
             </div>
 
@@ -22,6 +32,19 @@ const ProductionHero = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto space-y-8"
                 >
+                    {/* Logo */}
+                    <div className="flex justify-center mb-8">
+                        <div className="relative w-32 h-32 md:w-40 md:h-40">
+                            <CloudinaryImage
+                                src="PCE-logo"
+                                alt="PCE Logo"
+                                fill
+                                className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                                priority
+                            />
+                        </div>
+                    </div>
+
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
                         <Clapperboard className="w-4 h-4 text-purple-400" />

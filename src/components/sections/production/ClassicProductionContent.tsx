@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Award, Video, Mic, CheckCircle, Film } from 'lucide-react';
 import Link from 'next/link';
+import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const ClassicProductionContent = () => {
     return (
@@ -23,6 +24,15 @@ const ClassicProductionContent = () => {
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                             About <span className="text-blue-500">Premium Classic Entertainment</span>
                         </h2>
+
+                        <div className="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-lg relative h-40 w-full max-w-md bg-white/5">
+                            <CloudinaryImage
+                                src="PCE-banner"
+                                alt="Premium Classic Entertainment Banner"
+                                fill
+                                className="object-contain p-2"
+                            />
+                        </div>
 
                         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                             <p>
@@ -66,17 +76,31 @@ const ClassicProductionContent = () => {
                             transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800 relative group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-                                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="z-10 text-center p-6">
-                                        <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                                            <Film className="w-10 h-10 text-white" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white">Cinematic Excellence</h3>
-                                    </div>
+                            <div className="aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800 relative group flex items-center justify-center">
+                                {/* Background Glow */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-black/80 z-0"></div>
+
+                                <div className="z-10 text-center p-6 relative flex flex-col items-center">
+                                    <motion.div
+                                        whileHover={{ scale: 1.1, rotate: 5 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                        className="w-40 h-40 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border border-white/20 shadow-xl overflow-hidden p-4"
+                                    >
+                                        <CloudinaryImage
+                                            src="PCE-logo"
+                                            alt="Premium Classic Entertainment Logo"
+                                            width="150"
+                                            height="150"
+                                            className="object-contain w-full h-full"
+                                        />
+                                    </motion.div>
+                                    <h3 className="text-3xl font-bold text-white tracking-wide">Premium Classic Entertainment</h3>
+                                    <p className="text-gray-400 mt-2 font-medium">Production House</p>
                                 </div>
                             </div>
+                            {/* Decorative elements */}
+                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px]" />
+                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-[60px]" />
                         </motion.div>
 
                         <motion.div

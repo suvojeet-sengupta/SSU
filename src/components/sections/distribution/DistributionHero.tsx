@@ -1,8 +1,12 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import StatsGrid from '@/components/sections/home/StatsGrid';
+import DevelopmentPopup from '@/components/common/DevelopmentPopup';
 
 const DistributionHero = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#030712]">
             {/* Dynamic Background */}
@@ -39,7 +43,10 @@ const DistributionHero = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <button className="px-8 py-4 bg-red-600 text-white rounded-full font-bold text-lg hover:bg-red-700 transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                        <button
+                            onClick={() => setShowPopup(true)}
+                            className="px-8 py-4 bg-red-600 text-white rounded-full font-bold text-lg hover:bg-red-700 transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+                        >
                             Distribute Now
                         </button>
                     </div>
@@ -61,6 +68,8 @@ const DistributionHero = () => {
                     </div>
                 </motion.div>
             </div>
+
+            <DevelopmentPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
         </section>
     );
 };

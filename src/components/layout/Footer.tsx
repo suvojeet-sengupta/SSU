@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Clapperboard } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Clapperboard, Code } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -81,6 +81,16 @@ const Footer = () => {
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-amber-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+
+                {/* Developer Credit */}
+                <div className="mt-8 flex justify-center">
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 hover:bg-purple-900/20 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group cursor-default hover:scale-105 active:scale-95">
+                        <Code size={14} className="text-purple-400 group-hover:text-amber-400 group-hover:rotate-12 transition-all" />
+                        <span className="text-xs text-gray-500 group-hover:text-gray-300 transition-colors">
+                            Website developed by <span className="font-semibold text-gray-300 group-hover:text-amber-400 transition-colors">Suvojeet Sengupta</span>
+                        </span>
                     </div>
                 </div>
             </div>

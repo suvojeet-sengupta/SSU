@@ -3,6 +3,7 @@ import HomeHero from "@/components/sections/home/HomeHero";
 import HomeServices from "@/components/sections/home/HomeServices";
 import FeaturedWorks from "@/components/sections/home/FeaturedWorks";
 import GroupEcosystem from "@/components/sections/home/GroupEcosystem";
+import PartnersCarousel from "@/components/sections/home/PartnersCarousel";
 import SectionTitle from "@/components/common/SectionTitle";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#030712] text-white selection:bg-indigo-500/30">
 
       <HomeHero />
+
+      <PartnersCarousel />
 
       <HomeServices />
 
