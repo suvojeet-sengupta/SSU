@@ -18,19 +18,8 @@ const teamMembers = [
         icon: <Award className="w-5 h-5" />
     },
     {
-        name: "Surojit Ghosal",
-        role: "Director & Filmmaker",
-        image: "surojit-profile",
-        bio: "Surojit Ghosal is a filmmaker and assistant director known for his dynamic storytelling, strong visual sense and hands-on expertise in cinematography, lighting and post-production. With several years of experience in creative direction, short films, music videos and commercial production, he represents the new generation of passionate and technically skilled filmmakers. He completed his professional training in filmmaking from T-Series StageWorks Academy, Delhi, and has also trained under renowned institutes such as Arunodoi Ghosh Photography Workshop. Over the years, he has worked on 10+ films, short films and music projects, contributing as an Assistant Director, Associate Director, Cinematographer and Creative Supervisor.",
-        quote: "Innovation is the key to unlocking global potential.",
-        color: "group-hover:text-cyan-400",
-        border: "group-hover:border-cyan-500/50",
-        gradient: "from-cyan-500/20 to-blue-500/5",
-        icon: <Globe className="w-5 h-5" />
-    },
-    {
         name: "Mouma Sengupta",
-        role: "Co-Director & CEO",
+        role: "Director & CEO",
         image: "mouma-profile",
         bio: "Mouma Sengupta is a young, dynamic and highly creative Digital Marketing Professional, known for her expertise in social media promotion, brand strategy and affordable marketing solutions for artists and creators. She leads the Advertisement & Digital Marketing Wing of the Ghosal Group. Her mission is to provide every creator access to professional, affordable and impactful marketing. Her key responsibilities include Movie & Music Promotion, Social Media Campaigns, and Digital Strategy.",
         quote: "Great talent deserves great visibility — and the right marketing makes it possible.",
@@ -39,6 +28,18 @@ const teamMembers = [
         gradient: "from-amber-500/20 to-orange-500/5",
         icon: <Award className="w-5 h-5" />
     },
+    {
+        name: "Surojit Ghosal",
+        role: "Co-Director & Filmmaker",
+        image: "surojit-profile",
+        bio: "Surojit Ghosal is a filmmaker and assistant director known for his dynamic storytelling, strong visual sense and hands-on expertise in cinematography, lighting and post-production. With several years of experience in creative direction, short films, music videos and commercial production, he represents the new generation of passionate and technically skilled filmmakers. He completed his professional training in filmmaking from T-Series StageWorks Academy, Delhi, and has also trained under renowned institutes such as Arunodoi Ghosh Photography Workshop. Over the years, he has worked on 10+ films, short films and music projects, contributing as an Assistant Director, Associate Director, Cinematographer and Creative Supervisor.",
+        quote: "Innovation is the key to unlocking global potential.",
+        color: "group-hover:text-cyan-400",
+        border: "group-hover:border-cyan-500/50",
+        gradient: "from-cyan-500/20 to-blue-500/5",
+        icon: <Globe className="w-5 h-5" />
+    },
+
     {
         name: "Riya Ghosal",
         role: "Managing Director",
