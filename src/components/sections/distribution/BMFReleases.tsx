@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Music2, ExternalLink, Loader2 } from 'lucide-react';
