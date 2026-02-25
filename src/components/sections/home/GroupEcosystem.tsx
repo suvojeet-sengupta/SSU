@@ -44,7 +44,7 @@ const GroupEcosystem = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             viewport={{ once: true, margin: "-50px" }}
-                            className="group p-8 rounded-3xl dark:bg-white/[0.02] bg-white border dark:border-white/5 border-black/10 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-none dark:hover:bg-white/[0.04] hover:bg-gray-50 dark:hover:border-white/10 hover:border-black/20 transition-all duration-500 flex flex-col items-center text-center"
+                            className="group p-8 rounded-3xl dark:bg-white/[0.02] bg-white/90 backdrop-blur-md border dark:border-white/5 border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:hover:shadow-none dark:hover:bg-white/[0.04] hover:bg-white dark:hover:border-white/10 hover:border-black/10 transition-all duration-500 flex flex-col items-center text-center"
                         >
                             <div className="w-14 h-14 rounded-full border dark:border-white/10 border-black/10 dark:bg-black bg-gray-100 flex items-center justify-center dark:text-white/70 text-black/70 mb-6 group-hover:scale-110 dark:group-hover:text-white group-hover:text-black dark:group-hover:border-white/30 group-hover:border-black/30 transition-all duration-500">
                                 {company.icon}
