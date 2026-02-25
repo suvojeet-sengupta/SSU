@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'framer-motion';
-import { Play, Music2, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play, Music2, ExternalLink, Loader2 } from 'lucide-react';
 import SectionTitle from '@/components/common/SectionTitle';
 import { usePlayer } from '@/context/PlayerContext';
 
@@ -67,20 +67,28 @@ const releases = [
         image: "https://img.youtube.com/vi/bfpNcH21OlA/hqdefault.jpg",
         platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
         link: "https://music.youtube.com/watch?v=bfpNcH21OlA&si=nfh9SRTtjotDjc9p"
-    },
-    {
-        title: "The Pheonix",
-        artist: "OTT Release",
-        releaseDate: "2024",
-        genre: "Drama Telefilm",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop",
-        platforms: ["Shortfundly"],
-        link: "https://web.shortfundly.com/short-films/the-pheonix-english-drama-telefilm"
     }
 ];
 
 const BMFReleases = () => {
     const { playTrack } = usePlayer();
+    const [redirectingIndex, setRedirectingIndex] = useState<number | null>(null);
+
+    const handlePlay = (release: typeof releases[0], index: number) => {
+        setRedirectingIndex(index);
+        playTrack({
+            title: release.title,
+            artist: release.artist,
+            image: release.image,
+            link: release.link
+        });
+
+        // Synthetic delay for UX as requested
+        setTimeout(() => {
+            window.open(release.link, '_blank');
+            setRedirectingIndex(null);
+        }, 2500);
+    };
 
     return (
         <section className="py-20 dark:bg-[#030712] bg-gray-50 relative overflow-hidden transition-colors duration-700">
@@ -110,12 +118,31 @@ const BMFReleases = () => {
                                 />
                                 {/* Overlay on Hover */}
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    <button
-                                        onClick={() => playTrack(release)}
-                                        className="p-3 bg-red-500 rounded-full dark:text-white text-black transform hover:scale-110 transition-transform hover:shadow-lg hover:shadow-red-500/50"
-                                    >
-                                        <Play fill="currentColor" size={24} />
-                                    </button>
+                                    <AnimatePresence mode="wait">
+                                        {redirectingIndex === index ? (
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                exit={{ opacity: 0, scale: 0.8 }}
+                                                className="flex flex-col items-center gap-2"
+                                            >
+                                                <div className="p-3 bg-red-500 rounded-full text-white">
+                                                    <Loader2 className="animate-spin" size={24} />
+                                                </div>
+                                                <span className="text-white text-xs font-bold uppercase tracking-wider">Redirecting...</span>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.button
+                                                key="play-btn"
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                onClick={() => handlePlay(release, index)}
+                                                className="p-3 bg-red-500 rounded-full dark:text-white text-black transform hover:scale-110 transition-transform hover:shadow-lg hover:shadow-red-500/50"
+                                            >
+                                                <Play fill="currentColor" size={24} />
+                                            </motion.button>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             </div>
 
