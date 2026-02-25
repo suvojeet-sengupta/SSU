@@ -25,7 +25,7 @@ const ProductionHero = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="container mx-auto px-6 relative z-10 text-center pt-28">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

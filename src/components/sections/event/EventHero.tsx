@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 const EventHero = () => {
     return (
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-[#030712]">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#030712] pt-20">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent"></div>
 
-            <div className="container mx-auto px-4 relative z-10 text-center">
+            <div className="container mx-auto px-4 relative z-10 text-center pt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

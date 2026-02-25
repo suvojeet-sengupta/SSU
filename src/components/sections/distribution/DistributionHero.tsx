@@ -8,7 +8,7 @@ const DistributionHero = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#030712]">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#030712] pt-20">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent"></div>
