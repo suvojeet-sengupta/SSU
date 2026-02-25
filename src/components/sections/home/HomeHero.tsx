@@ -1,63 +1,131 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const HomeHero = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({
+                x: (e.clientX / window.innerWidth - 0.5) * 20,
+                y: (e.clientY / window.innerHeight - 0.5) * 20,
+            });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
     return (
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden dark:bg-black bg-gray-50 selection:dark:bg-white/30 selection:bg-black/20">
-            {/* Minimalist Background Effects */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-10 grayscale dark:mix-blend-screen mix-blend-multiply" />
-            <div className="absolute inset-0 bg-gradient-to-b dark:from-black dark:via-black/80 dark:to-[#050505] from-gray-50 via-gray-50/80 to-gray-50" />
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden dark:bg-[#030712] bg-gray-50 selection:dark:bg-indigo-500/30 selection:bg-black/20">
+            {/* Immersive Cinematic Background */}
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-[0.03] dark:opacity-[0.07] grayscale mix-blend-overlay dark:mix-blend-screen" />
 
-            {/* Sophisticated Glow */}
-            <div className="absolute top-0 transform -translate-y-1/2 rounded-full w-[800px] h-[400px] bg-[#eab308]/10 blur-[120px] pointer-events-none dark:opacity-100 opacity-40" />
+            {/* Advanced Gradients & Orbs for Premium feel */}
+            <div className="absolute inset-0 bg-gradient-to-b dark:from-[#030712]/50 dark:via-[#030712]/80 dark:to-[#030712] from-gray-50/50 via-gray-50/80 to-gray-50 z-0 pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-32 pb-20">
+            <motion.div
+                animate={{
+                    x: mousePosition.x * 2,
+                    y: mousePosition.y * 2
+                }}
+                transition={{ type: "spring", stiffness: 50, damping: 25 }}
+                className="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 rounded-full w-[600px] h-[600px] bg-indigo-500/20 blur-[150px] pointer-events-none opacity-40 dark:opacity-60"
+            />
+            <motion.div
+                animate={{
+                    x: mousePosition.x * -2,
+                    y: mousePosition.y * -2
+                }}
+                transition={{ type: "spring", stiffness: 50, damping: 25 }}
+                className="absolute bottom-[20%] right-[10%] transform translate-x-1/2 translate-y-1/2 rounded-full w-[500px] h-[500px] bg-fuchsia-500/10 blur-[150px] pointer-events-none opacity-40 dark:opacity-50"
+            />
+
+            <div className="absolute top-0 transform -translate-y-1/2 rounded-full w-[800px] h-[400px] bg-[#eab308]/15 blur-[120px] pointer-events-none dark:opacity-100 opacity-60 mix-blend-screen" />
+
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center pt-32 pb-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     className="flex flex-col items-center w-full max-w-5xl"
                 >
-                    {/* Refined Badge */}
-                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border dark:border-white/10 border-black/10 dark:bg-white/[0.03] bg-black/[0.03] backdrop-blur-md mb-8">
-                        <div className="w-2 h-2 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
-                        <span className="dark:text-white/70 text-black/70 text-xs font-medium tracking-widest uppercase">
+                    {/* Exquisite Badge */}
+                    <div className="group relative inline-flex items-center gap-3 px-5 py-2.5 rounded-full border dark:border-white/10 border-black/10 dark:bg-white/[0.02] bg-black/[0.02] backdrop-blur-xl mb-10 overflow-hidden cursor-default shadow-sm dark:shadow-none transition-all duration-500 hover:border-indigo-500/30 dark:hover:border-indigo-500/30">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <Sparkles className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+                        <span className="dark:text-white/80 text-black/80 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase relative z-10">
                             The Victory Venture of Ghosal Group
                         </span>
                     </div>
 
-                    {/* Premium Typography */}
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tighter font-medium dark:text-white text-black mb-6">
-                        Shyam Surma <span className="dark:text-white/40 text-black/40 italic font-light">CineVerse</span>
-                    </h1>
+                    {/* Epic Typography */}
+                    <div className="relative mb-8">
+                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] tracking-tighter font-medium dark:text-white text-black leading-none flex flex-col items-center">
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="block mb-2 text-5xl md:text-7xl lg:text-8xl drop-shadow-sm dark:drop-shadow-none"
+                            >
+                                Shyam Surma
+                            </motion.span>
+                            <motion.span
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
+                                className="block font-light italic bg-clip-text text-transparent bg-gradient-to-r dark:from-white dark:via-gray-300 dark:to-gray-500 from-black via-gray-700 to-gray-500 pr-4 pb-4 dark:drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                            >
+                                CineVerse
+                            </motion.span>
+                        </h1>
+                    </div>
 
                     {/* Elegant Tagline */}
-                    <p className="text-xl md:text-2xl dark:text-white/50 text-black/50 font-light tracking-wide mb-10 max-w-2xl">
-                        Targeting Success, Blessed by Khatu Shyam
-                    </p>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.6 }}
+                        className="text-xl md:text-3xl dark:text-white/60 text-black/60 font-light tracking-wide mb-8 max-w-2xl"
+                    >
+                        Targeting Success, Blessed by <span className="text-[#eab308] font-medium dark:drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">Khatu Shyam</span>
+                    </motion.p>
 
-                    <p className="text-lg dark:text-white/60 text-black/60 max-w-3xl mb-12 leading-relaxed font-light">
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.7 }}
+                        className="text-lg md:text-xl dark:text-white/50 text-black/50 max-w-3xl mb-14 leading-relaxed font-light"
+                    >
                         From film production and event execution to advertising, digital marketing, and distribution. We connect creativity with global visibility.
-                    </p>
+                    </motion.p>
 
-                    {/* Minimalist Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                        <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 dark:bg-white dark:text-black bg-black text-white rounded-full font-medium transition-transform hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto">
-                            <span>Start Journey</span>
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    {/* Next-gen Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                        className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
+                    >
+                        <Link href="/contact" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r dark:from-white dark:to-gray-200 from-black to-gray-800 dark:text-black text-white rounded-full font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] active:scale-[0.98] w-full sm:w-auto overflow-hidden">
+                            <span className="relative z-10 text-base">Start Journey</span>
+                            <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                            <div className="absolute inset-0 bg-white/20 dark:bg-black/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                         </Link>
-                        <Link href="/about" className="group inline-flex items-center justify-center gap-3 px-8 py-4 dark:bg-white/[0.03] bg-black/[0.03] border dark:border-white/10 border-black/10 dark:text-white text-black rounded-full font-medium dark:hover:bg-white/[0.08] hover:bg-black/[0.08] transition-colors w-full sm:w-auto">
-                            <Play className="w-4 h-4 dark:fill-white/80 fill-black/80 dark:text-white/80 text-black/80" />
-                            <span>Explore Context</span>
+                        <Link href="/about" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 dark:bg-white/[0.03] bg-black/[0.03] border dark:border-white/10 border-black/10 dark:text-white text-black rounded-full font-medium transition-all duration-300 hover:bg-black/[0.05] dark:hover:bg-white/[0.08] hover:border-black/20 dark:hover:border-white/20 active:scale-[0.98] w-full sm:w-auto backdrop-blur-md">
+                            <div className="bg-black/5 dark:bg-white/10 p-1.5 rounded-full group-hover:scale-110 transition-transform duration-300">
+                                <Play className="w-4 h-4 dark:fill-white/80 fill-black/80 dark:text-white/80 text-black/80" />
+                            </div>
+                            <span className="text-base">Explore Context</span>
                         </Link>
-                    </div>
+                    </motion.div>
                 </motion.div>
             </div>
 
-            {/* Subtle bottom gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t dark:from-black from-gray-50 to-transparent pointer-events-none" />
+            {/* Seamless Bottom Gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t dark:from-[#030712] from-gray-50 to-transparent pointer-events-none z-10" />
         </section>
     );
 };
