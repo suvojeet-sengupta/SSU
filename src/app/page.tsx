@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white selection:bg-indigo-500/30">
+    <main className="min-h-screen dark:bg-[#030712] bg-gray-50 dark:text-white text-gray-900 selection:bg-indigo-500/30">
 
       <HomeHero />
 
@@ -21,7 +21,7 @@ export default function Home() {
 
       <HomeServices />
 
-      <section className="relative py-20 bg-[#030712]">
+      <section className="relative py-20 dark:bg-[#030712] bg-gray-50">
         <div className="container mx-auto px-4">
           <SectionTitle
             badge="Showcase"

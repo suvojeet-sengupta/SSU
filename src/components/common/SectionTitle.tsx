@@ -12,8 +12,8 @@ const SectionTitle = ({ badge, title, subtitle }: SectionTitleProps) => {
             <div className="inline-flex items-center gap-2 bg-[#3f51b5] text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20">
                 <Flame size={16} /> {badge}
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1a237e]">{title}</h2>
-            {subtitle && <p className="text-gray-500 max-w-2xl">{subtitle}</p>}
+            <h2 className="text-4xl md:text-5xl font-bold dark:text-white text-[#1a237e]">{title}</h2>
+            {subtitle && <p className="dark:text-gray-400 text-gray-600 max-w-2xl">{subtitle}</p>}
         </div>
     );
 };
