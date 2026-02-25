@@ -2,106 +2,62 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import Link from 'next/link';
-import ParallaxText, { RevealText } from '@/components/ui/ParallaxText';
 
 const HomeHero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0118] pb-20">
-            {/* Cosmic Background */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-color-dodge"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0118] via-[#0a0118]/80 to-transparent"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.15),transparent_70%)]"></div>
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden dark:bg-black bg-gray-50 selection:dark:bg-white/30 selection:bg-black/20">
+            {/* Minimalist Background Effects */}
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=2010&auto=format&fit=crop')] bg-cover bg-center opacity-10 grayscale dark:mix-blend-screen mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-b dark:from-black dark:via-black/80 dark:to-[#050505] from-gray-50 via-gray-50/80 to-gray-50" />
 
-            {/* Parallax Background Text */}
-            <div className="absolute top-1/4 left-0 w-full opacity-5 pointer-events-none select-none z-0">
-                <ParallaxText baseVelocity={-5} className="font-black text-9xl text-white">
-                    CINEMA MUSIC EVENTS DISTRIBUTION PRODUCTION ADVERTISING
-                </ParallaxText>
-                <ParallaxText baseVelocity={5} className="font-black text-9xl text-white mt-4">
-                    CREATIVITY INNOVATION GLOBAL VISION SHYAM SURMA
-                </ParallaxText>
-            </div>
+            {/* Sophisticated Glow */}
+            <div className="absolute top-0 transform -translate-y-1/2 rounded-full w-[800px] h-[400px] bg-[#eab308]/10 blur-[120px] pointer-events-none" />
 
-            {/* Floating Particles/Stars (Simplified CSS/Divs) */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-200 rounded-full animate-pulse"></div>
-                <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-yellow-100 rounded-full animate-pulse delay-700"></div>
-                <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse delay-300"></div>
-            </div>
-
-            <div className="container mx-auto px-4 relative z-10 text-center pt-28">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-32 pb-20">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center w-full max-w-5xl"
                 >
-                    {/* Mandala/Ornamental glow behind title */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-600/20 to-amber-500/20 rounded-full blur-[100px] -z-10"></div>
-
-                    {/* Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 rounded-full border border-amber-500/30 bg-amber-950/30 backdrop-blur-md mb-10 shadow-[0_0_25px_rgba(245,158,11,0.2)]"
-                    >
-                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400 animate-pulse shrink-0"></div>
-                        <span className="text-amber-200 text-xs md:text-sm font-medium tracking-[0.1em] md:tracking-[0.15em] uppercase font-cinzel whitespace-nowrap">The Victory Venture of Ghosal Group</span>
-                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400 animate-pulse shrink-0"></div>
-                    </motion.div>
-
-                    {/* Main Title - Comic/Cinematic Style */}
-                    <h1 className="relative font-cinzel font-black tracking-tight leading-none mb-4 group">
-                        <span className="block text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-amber-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter">
-                            <RevealText text="SHYAM SURMA" className="justify-center" />
+                    {/* Refined Badge */}
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border dark:border-white/10 border-black/10 dark:bg-white/[0.03] bg-black/[0.03] backdrop-blur-md mb-8">
+                        <div className="w-2 h-2 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
+                        <span className="dark:text-white/70 text-black/70 text-xs font-medium tracking-widest uppercase">
+                            The Victory Venture of Ghosal Group
                         </span>
-                        <span className="block text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-b from-purple-200 via-purple-400 to-indigo-600 drop-shadow-[0_2px_10px_rgba(147,51,234,0.5)] mt-2">
-                            <RevealText text="CINEVERSE" className="justify-center" />
-                        </span>
+                    </div>
+
+                    {/* Premium Typography */}
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tighter font-medium dark:text-white text-black mb-6">
+                        Shyam Surma <span className="dark:text-white/40 text-black/40 italic font-light">CineVerse</span>
                     </h1>
 
-                    {/* Script Tagline */}
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="font-great-vibes text-3xl md:text-5xl text-amber-400/90 mt-6 mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                    >
+                    {/* Elegant Tagline */}
+                    <p className="text-xl md:text-2xl dark:text-white/50 text-black/50 font-light tracking-wide mb-10 max-w-2xl">
                         Targeting Success, Blessed by Khatu Shyam
-                    </motion.p>
+                    </p>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.1, duration: 0.8 }}
-                        className="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto mb-12 leading-relaxed font-light"
-                    >
-                        From <span className="text-purple-300 font-semibold">film production</span> and <span className="text-purple-300 font-semibold">event execution</span> to <span className="text-purple-300 font-semibold">advertising</span>, <span className="text-purple-300 font-semibold">digital marketing</span>, and <span className="text-purple-300 font-semibold">music & movie distribution</span> - <strong className="text-white">Shyam SurMa CineVerse</strong> connects creativity with global visibility.
-                    </motion.p>
+                    <p className="text-lg dark:text-white/60 text-black/60 max-w-3xl mb-12 leading-relaxed font-light">
+                        From film production and event execution to advertising, digital marketing, and distribution. We connect creativity with global visibility.
+                    </p>
 
-                    {/* Buttons */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.2 }}
-                        className="flex flex-col md:flex-row items-center justify-center gap-6"
-                    >
-                        <Link href="/contact" className="relative group px-10 py-4 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-full overflow-hidden shadow-[0_0_20px_rgba(217,119,6,0.4)] hover:shadow-[0_0_40px_rgba(217,119,6,0.6)] transition-all transform hover:scale-105">
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <span className="relative z-10 text-black font-cinzel font-bold text-lg flex items-center gap-2">
-                                Start Journey <ArrowRight size={20} />
-                            </span>
+                    {/* Minimalist Buttons */}
+                    <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                        <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 dark:bg-white dark:text-black bg-black text-white rounded-full font-medium transition-transform hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto">
+                            <span>Start Journey</span>
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Link>
-
-                        <Link href="/about" className="px-10 py-4 bg-white/5 border border-purple-500/30 text-purple-200 font-cinzel font-bold text-lg rounded-full hover:bg-white/10 hover:border-purple-400 transition-all flex items-center gap-2 backdrop-blur-sm">
-                            <Play size={18} className="fill-current" /> Explore
+                        <Link href="/about" className="group inline-flex items-center justify-center gap-3 px-8 py-4 dark:bg-white/[0.03] bg-black/[0.03] border dark:border-white/10 border-black/10 dark:text-white text-black rounded-full font-medium dark:hover:bg-white/[0.08] hover:bg-black/[0.08] transition-colors w-full sm:w-auto">
+                            <Play className="w-4 h-4 dark:fill-white/80 fill-black/80 dark:text-white/80 text-black/80" />
+                            <span>Explore Context</span>
                         </Link>
-                    </motion.div>
+                    </div>
                 </motion.div>
             </div>
 
-            {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#030712] to-transparent z-20 pointer-events-none"></div>
+            {/* Subtle bottom gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t dark:from-black from-gray-50 to-transparent pointer-events-none" />
         </section>
     );
 };

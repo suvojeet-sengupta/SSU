@@ -1,19 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Play, Clapperboard } from 'lucide-react';
+import { Play, Camera } from 'lucide-react';
 import Link from 'next/link';
 import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const ProductionHero = () => {
     return (
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-black py-10">
-            {/* Background Effects */}
-            {/* Background Effects */}
+        <section className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden dark:bg-black bg-gray-50 py-20">
+            {/* Minimalist Background Effects */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
-                <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-purple-500/10 rounded-full blur-[100px] animate-pulse delay-1000" />
-                <div className="absolute inset-0 opacity-40">
+                <div className="absolute inset-0 opacity-20 grayscale dark:mix-blend-screen mix-blend-multiply">
                     <CloudinaryImage
                         src="PCE-banner"
                         alt="Production Banner"
@@ -22,68 +19,59 @@ const ProductionHero = () => {
                         priority
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+                <div className="absolute inset-0 bg-gradient-to-b dark:from-black dark:via-black/80 dark:to-[#050505] from-gray-50 via-gray-50/80 to-transparent" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 text-center pt-28">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-4xl mx-auto space-y-8"
+                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center w-full max-w-4xl"
                 >
-                    {/* Logo */}
-                    <div className="flex justify-center mb-8">
-                        <div className="relative w-32 h-32 md:w-40 md:h-40">
+                    {/* Minimal Logo Treatment */}
+                    <div className="flex justify-center mb-10">
+                        <div className="relative w-28 h-28 md:w-36 md:h-36 opacity-90 drop-shadow-xl dark:invert-0 invert transition-all">
                             <CloudinaryImage
                                 src="PCE-logo"
                                 alt="PCE Logo"
                                 fill
-                                className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                                className="object-contain"
                                 priority
                             />
                         </div>
                     </div>
 
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
-                        <Clapperboard className="w-4 h-4 text-purple-400" />
-                        <span className="text-sm font-medium text-gray-300">Production House</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border dark:border-white/10 border-black/10 dark:bg-white/[0.02] bg-black/[0.02] backdrop-blur-md mb-8">
+                        <Camera className="w-3.5 h-3.5 dark:text-white/50 text-black/50" />
+                        <span className="dark:text-white/60 text-black/60 text-xs font-semibold tracking-wide uppercase">Production House</span>
                     </div>
 
                     {/* Main Title */}
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                        <span className="block text-white mb-2">Premium Classic</span>
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                    <h1 className="text-5xl md:text-7xl font-semibold tracking-tight mb-8">
+                        <span className="block dark:text-white text-black mb-2">Premium Classic</span>
+                        <span className="dark:text-white/40 text-black/40 italic font-light">
                             Entertainment
                         </span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        Delivering world-class production values and storytelling excellence.
+                    <p className="text-lg dark:text-white/50 text-black/50 max-w-2xl leading-relaxed font-light mb-12">
+                        Delivering world-class production values and storytelling excellence. Crafting visual narratives with uncompromising quality.
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                        <Link href="/gallery/production" className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-100 transition-all flex items-center gap-2">
-                            <Play className="w-5 h-5 fill-current" />
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                        <Link href="/gallery/production" className="group inline-flex items-center justify-center gap-3 px-8 py-4 dark:bg-white/[0.03] bg-black/[0.03] border dark:border-white/10 border-black/10 dark:text-white text-black rounded-full font-medium dark:hover:bg-white/[0.08] hover:bg-black/[0.08] transition-colors w-full sm:w-auto">
+                            <Play className="w-4 h-4 dark:fill-white/80 fill-black/80 dark:text-white/80 text-black/80" />
                             <span>Production Gallery</span>
-                            <div className="absolute inset-0 rounded-full bg-white/50 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                     </div>
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
-            >
-                <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center p-2">
-                    <div className="w-1 h-3 bg-current rounded-full" />
-                </div>
-            </motion.div>
+            {/* Bottom Fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t dark:from-black from-gray-50 to-transparent pointer-events-none" />
         </section>
     );
 };

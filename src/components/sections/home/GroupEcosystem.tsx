@@ -6,61 +6,51 @@ const companies = [
     {
         name: "Ghosal Event",
         type: "Event Management",
-        icon: <Building2 className="w-8 h-8" />,
-        color: "text-purple-400",
-        border: "group-hover:border-purple-500/50",
-        bg: "group-hover:bg-purple-500/10"
+        icon: <Building2 strokeWidth={1.5} className="w-6 h-6" />,
     },
     {
-        name: "Premium Classic Ent.",
+        name: "Premium Classic",
         type: "Production House",
-        icon: <Clapperboard className="w-8 h-8" />,
-        color: "text-yellow-400",
-        border: "group-hover:border-yellow-500/50",
-        bg: "group-hover:bg-yellow-500/10"
+        icon: <Clapperboard strokeWidth={1.5} className="w-6 h-6" />,
     },
     {
         name: "BMF MUSIC",
         type: "Music Distribution",
-        icon: <Music className="w-8 h-8" />,
-        color: "text-red-400",
-        border: "group-hover:border-red-500/50",
-        bg: "group-hover:bg-red-500/10"
+        icon: <Music strokeWidth={1.5} className="w-6 h-6" />,
     },
     {
-        name: "Shyam Surma CineVerse",
+        name: "CineVerse",
         type: "Ads & Marketing",
-        icon: <Film className="w-8 h-8" />,
-        color: "text-cyan-400",
-        border: "group-hover:border-cyan-500/50",
-        bg: "group-hover:bg-cyan-500/10"
+        icon: <Film strokeWidth={1.5} className="w-6 h-6" />,
     }
 ];
 
 const GroupEcosystem = () => {
     return (
-        <section className="py-20 bg-[#030712] border-t border-white/5">
-            <div className="container mx-auto px-4 text-center">
-                <div className="mb-16">
-                    <span className="text-gray-500 text-sm font-medium uppercase tracking-widest">Our Ecosystem</span>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 text-white">Ghosal Group Entities</h2>
+        <section className="py-24 dark:bg-black bg-gray-50 border-t dark:border-white/5 border-black/5">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col items-center text-center mb-16">
+                    <span className="dark:text-white/40 text-black/40 text-xs font-semibold uppercase tracking-widest mb-4">Architecture</span>
+                    <h2 className="text-3xl md:text-5xl font-medium tracking-tight dark:text-white text-black">
+                        Group <span className="dark:text-white/40 text-black/40 italic font-light">Entities</span>
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {companies.map((company, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className={`group p-8 rounded-2xl bg-white/5 border border-white/10 ${company.border} ${company.bg} transition-all duration-500 cursor-default`}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            className="group p-8 rounded-3xl dark:bg-white/[0.02] bg-white border dark:border-white/5 border-black/5 hover:shadow-lg dark:hover:shadow-none dark:hover:bg-white/[0.04] hover:bg-gray-50 dark:hover:border-white/10 hover:border-black/10 transition-all duration-500 flex flex-col items-center text-center"
                         >
-                            <div className={`w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-6 ${company.color} group-hover:scale-110 transition-transform`}>
+                            <div className="w-14 h-14 rounded-full border dark:border-white/10 border-black/10 dark:bg-black bg-gray-100 flex items-center justify-center dark:text-white/70 text-black/70 mb-6 group-hover:scale-110 dark:group-hover:text-white group-hover:text-black dark:group-hover:border-white/30 group-hover:border-black/30 transition-all duration-500">
                                 {company.icon}
                             </div>
-                            <h3 className="text-lg font-bold text-white mb-2">{company.name}</h3>
-                            <p className="text-gray-500 text-sm">{company.type}</p>
+                            <h3 className="text-xl font-medium dark:text-white text-black mb-2">{company.name}</h3>
+                            <p className="dark:text-white/40 text-black/50 text-sm font-light tracking-wide uppercase">{company.type}</p>
                         </motion.div>
                     ))}
                 </div>

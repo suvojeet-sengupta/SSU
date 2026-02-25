@@ -9,41 +9,41 @@ const services = [
         title: "Distribution",
         description: "Release your music to 150+ stores worldwide including Spotify, Apple Music, and Instagram.",
         link: "/distribution",
-        styles: { glow: "bg-cyan-500/10", bg: "bg-cyan-500/20", text: "text-cyan-400" }
+        styles: { glow: "dark:bg-cyan-500/10 bg-cyan-500/20", bg: "dark:bg-cyan-500/20 bg-cyan-100", text: "text-cyan-600 dark:text-cyan-400" }
     },
     {
         icon: <Megaphone size={32} />,
         title: "Advertisement",
         description: "Strategic campaigns across social media, YouTube, and digital platforms to amplify your reach.",
         link: "/advertisement",
-        styles: { glow: "bg-pink-500/10", bg: "bg-pink-500/20", text: "text-pink-400" }
+        styles: { glow: "dark:bg-pink-500/10 bg-pink-500/20", bg: "dark:bg-pink-500/20 bg-pink-100", text: "text-pink-600 dark:text-pink-400" }
     },
     {
         icon: <Building2 size={32} />,
         title: "Event Management",
         description: "Executing seamless corporate events, concerts, and large-scale productions with precision.",
         link: "/event",
-        styles: { glow: "bg-purple-500/10", bg: "bg-purple-500/20", text: "text-purple-400" }
+        styles: { glow: "dark:bg-purple-500/10 bg-purple-500/20", bg: "dark:bg-purple-500/20 bg-purple-100", text: "text-purple-600 dark:text-purple-400" }
     },
     {
         icon: <Clapperboard size={32} />,
         title: "Production House",
         description: "Full-scale film production services from pre-production to filming and execution.",
         link: "/production",
-        styles: { glow: "bg-yellow-500/10", bg: "bg-yellow-500/20", text: "text-yellow-400" }
+        styles: { glow: "dark:bg-yellow-500/10 bg-yellow-500/20", bg: "dark:bg-yellow-500/20 bg-yellow-100", text: "text-yellow-600 dark:text-yellow-400" }
     },
     {
         icon: <Film size={32} />,
         title: "Post-Production",
         description: "State-of-the-art editing, VFX, color grading, and sound design for cinematic excellence.",
         link: "/production",
-        styles: { glow: "bg-blue-500/10", bg: "bg-blue-500/20", text: "text-blue-400" }
+        styles: { glow: "dark:bg-blue-500/10 bg-blue-500/20", bg: "dark:bg-blue-500/20 bg-blue-100", text: "text-blue-600 dark:text-blue-400" }
     }
 ];
 
 const HomeServices = () => {
     return (
-        <section className="py-20 bg-black">
+        <section className="py-20 dark:bg-black bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
@@ -53,7 +53,7 @@ const HomeServices = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors overflow-hidden"
+                            className="group relative p-8 rounded-3xl dark:bg-white/5 bg-white border dark:border-white/10 border-black/5 dark:hover:bg-white/10 hover:shadow-xl transition-all overflow-hidden"
                         >
                             <div className={`absolute top-0 right-0 p-32 ${service.styles.glow} rounded-full blur-3xl -mr-16 -mt-16 transition-opacity opacity-0 group-hover:opacity-100`}></div>
 
@@ -61,8 +61,8 @@ const HomeServices = () => {
                                 {service.icon}
                             </div>
 
-                            <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                            <p className="text-gray-400 mb-8 leading-relaxed">
+                            <h3 className="text-2xl font-bold dark:text-white text-black mb-4">{service.title}</h3>
+                            <p className="dark:text-gray-400 text-gray-600 mb-8 leading-relaxed">
                                 {service.description}
                             </p>
 
