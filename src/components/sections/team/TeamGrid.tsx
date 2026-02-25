@@ -179,7 +179,7 @@ const TeamMemberModal = ({ member, onClose }: { member: typeof teamMembers[0], o
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-[#0f0f0f] border border-white/10 w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl relative flex flex-col md:flex-row overflow-hidden"
+                className="bg-[#0f0f0f] border border-white/10 w-full max-w-4xl max-h-[85vh] md:min-h-[400px] rounded-3xl shadow-2xl relative flex flex-col md:flex-row overflow-hidden"
             >
                 <button
                     onClick={onClose}
@@ -196,7 +196,7 @@ const TeamMemberModal = ({ member, onClose }: { member: typeof teamMembers[0], o
                         <img
                             src={member.image}
                             alt={member.name}
-                            className="w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover"
                             onError={(e) => {
                                 if (member.fallbackImage && e.currentTarget.src !== member.fallbackImage) {
                                     e.currentTarget.src = member.fallbackImage;
@@ -212,11 +212,11 @@ const TeamMemberModal = ({ member, onClose }: { member: typeof teamMembers[0], o
                             className="object-cover"
                         />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent md:bg-gradient-to-r"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent md:bg-gradient-to-r pointer-events-none"></div>
                 </div>
 
                 {/* Content - Scrollable Region */}
-                <div className="p-8 md:p-12 md:w-3/5 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20">
+                <div className="p-8 md:p-12 md:w-3/5 flex flex-col flex-1 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20">
                     <div className="mb-6 pr-8"> {/* Added right padding to prevent close button overlap */}
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">{member.name}</h2>
                         <p className={`text-xl font-medium ${member.color.replace('group-hover:', '')}`}>
