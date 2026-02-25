@@ -66,7 +66,7 @@ const StatsGrid = () => {
     return (
         <div className="grid grid-cols-2 gap-4">
             {stats.map((stat, index) => (
-                <div key={index} className="group dark:bg-black/40 bg-white border dark:border-white/5 border-black/5 rounded-2xl p-5 flex flex-col items-center justify-center text-center dark:hover:bg-white/5 hover:bg-gray-50 dark:hover:border-white/10 hover:border-black/10 hover:shadow-md dark:shadow-none transition-all duration-300 cursor-pointer">
+                <div key={index} className="group dark:bg-black/40 bg-white border dark:border-white/5 border-black/10 shadow-sm dark:shadow-none rounded-2xl p-5 flex flex-col items-center justify-center text-center dark:hover:bg-white/5 hover:bg-gray-50 dark:hover:border-white/10 hover:border-black/20 hover:shadow-md dark:hover:shadow-none transition-all duration-300 cursor-pointer">
                     <div className="p-3 dark:bg-white/5 bg-gray-100 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
                         {stat.icon}
                     </div>

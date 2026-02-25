@@ -78,7 +78,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t dark:border-white/5 border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs dark:text-gray-500 text-gray-500 font-light">
+                <div className="border-t dark:border-white/5 border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs dark:text-gray-500 text-gray-600 font-light">
                     <p>© {new Date().getFullYear()} Shyam Surma CineVerse. All rights reserved.</p>
                     <div className="flex gap-6">
                         <a href="#" className="dark:hover:text-white hover:text-black transition-colors">Privacy Policy</a>
@@ -90,8 +90,8 @@ const Footer = () => {
                 <div className="mt-8 flex justify-center">
                     <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full dark:bg-white/[0.02] bg-black/[0.02] dark:hover:bg-white/[0.05] hover:bg-black/[0.05] border dark:border-white/5 border-black/5 dark:hover:border-white/10 hover:border-black/10 transition-all duration-300 group cursor-default">
                         <Code size={14} strokeWidth={1.5} className="dark:text-white/40 text-black/40 dark:group-hover:text-white group-hover:text-black transition-all" />
-                        <span className="text-xs dark:text-gray-500 text-gray-500 font-light transition-colors">
-                            Website developed by <span className="font-medium dark:text-gray-300 text-gray-700 dark:group-hover:text-white group-hover:text-black transition-colors">Suvojeet Sengupta</span>
+                        <span className="text-xs dark:text-gray-500 text-gray-600 font-light transition-colors">
+                            Website developed by <span className="font-medium dark:text-gray-300 text-gray-900 dark:group-hover:text-white group-hover:text-black transition-colors">Suvojeet Sengupta</span>
                         </span>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ const services = [
 
 const EventContent = () => {
     return (
-        <section className="py-20 bg-[#030712] text-white">
+        <section className="py-20 dark:bg-[#030712] bg-white dark:text-white text-black transition-colors duration-700">
             <div className="container mx-auto px-6">
 
                 {/* Founder Story */}
@@ -39,10 +39,10 @@ const EventContent = () => {
                         viewport={{ once: true }}
                     >
                         <SectionTitle badge="Legacy" title="Our Foundation" subtitle="Rooted in trust and excellence." />
-                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                        <p className="dark:text-gray-300 text-gray-700 text-lg leading-relaxed mb-6">
                             Founded in <span className="text-purple-400 font-bold">1995</span> by <span className="text-purple-400 font-bold">Ranjit Ghosal</span>, Ghosal Event stands as the backbone of the Ghosal Group. What started as a vision to organize memorable gatherings has grown into a premier event management company.
                         </p>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="dark:text-gray-400 text-gray-600 leading-relaxed">
                             With decades of experience, we have earned a reputation for creativity, reliability, and delivering premium events that leave a lasting impression.
                         </p>
                     </motion.div>
@@ -51,12 +51,12 @@ const EventContent = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative h-[400px] rounded-3xl overflow-hidden border border-white/10"
+                        className="relative h-[400px] rounded-3xl overflow-hidden border dark:border-white/10 border-black/10"
                     >
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2162&auto=format&fit=crop')] bg-cover bg-center"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
                             <div>
-                                <h4 className="text-2xl font-bold text-white">Ranjit Ghosal</h4>
+                                <h4 className="text-2xl font-bold dark:text-white text-black">Ranjit Ghosal</h4>
                                 <p className="text-purple-300">Founder</p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ const EventContent = () => {
                 <div>
                     <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold mb-4">What We Specialize In</h3>
-                        <p className="text-gray-400">Comprehensive event solutions for every occasion.</p>
+                        <p className="dark:text-gray-400 text-gray-600">Comprehensive event solutions for every occasion.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -78,13 +78,13 @@ const EventContent = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                                className="p-6 rounded-2xl dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 dark:hover:bg-white/10 hover:bg-black/10 transition-colors"
                             >
-                                <div className="mb-4 p-3 bg-white/5 rounded-xl inline-block">
+                                <div className="mb-4 p-3 dark:bg-white/5 bg-black/5 rounded-xl inline-block">
                                     {service.icon}
                                 </div>
                                 <h4 className="text-xl font-bold mb-3">{service.title}</h4>
-                                <p className="text-gray-400 text-sm leading-relaxed">
+                                <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>

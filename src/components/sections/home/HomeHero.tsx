@@ -11,7 +11,7 @@ const HomeHero = () => {
             <div className="absolute inset-0 bg-gradient-to-b dark:from-black dark:via-black/80 dark:to-[#050505] from-gray-50 via-gray-50/80 to-gray-50" />
 
             {/* Sophisticated Glow */}
-            <div className="absolute top-0 transform -translate-y-1/2 rounded-full w-[800px] h-[400px] bg-[#eab308]/10 blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 transform -translate-y-1/2 rounded-full w-[800px] h-[400px] bg-[#eab308]/10 blur-[120px] pointer-events-none dark:opacity-100 opacity-40" />
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-32 pb-20">
                 <motion.div

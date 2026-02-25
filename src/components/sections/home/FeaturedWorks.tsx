@@ -7,19 +7,19 @@ const works = [
         category: "Music Distribution",
         title: "Global Chart Toppers",
         subtitle: "Distribution across 150+ international storefronts",
-        image: "from-[#0a0f18] to-black"
+        image: "dark:from-[#0a0f18] dark:to-black from-[#e6f0f9] to-[#ffffff]"
     },
     {
         category: "Advertising",
         title: "Brand X Campaign",
         subtitle: "Multi-channel influencer strategy & execution",
-        image: "from-[#180a0f] to-black"
+        image: "dark:from-[#180a0f] dark:to-black from-[#f9e6f0] to-[#ffffff]"
     },
     {
         category: "Film Production",
         title: "Indie Film Festival",
         subtitle: "Worldwide digital premiere and theater release",
-        image: "from-[#0f0a18] to-black"
+        image: "dark:from-[#0f0a18] dark:to-black from-[#eee6f9] to-[#ffffff]"
     }
 ];
 
@@ -44,7 +44,7 @@ const FeaturedWorks = () => {
                             className="group relative aspect-[4/5] md:aspect-[3/4] dark:bg-[#050505] bg-white rounded-3xl overflow-hidden border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/20 hover:shadow-xl transition-all duration-500 cursor-pointer"
                         >
                             {/* Ambient Background */}
-                            <div className={`absolute inset-0 bg-gradient-to-b ${work.image} dark:opacity-80 opacity-5 group-hover:opacity-100 transition-opacity duration-500`} />
+                            <div className={`absolute inset-0 bg-gradient-to-b ${work.image} dark:opacity-80 opacity-40 group-hover:opacity-100 transition-opacity duration-500`} />
 
                             {/* Content */}
                             <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">

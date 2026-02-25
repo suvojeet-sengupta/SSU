@@ -51,12 +51,12 @@ const ProductionHero = () => {
                     {/* Main Title */}
                     <h1 className="text-5xl md:text-7xl font-semibold tracking-tight mb-8">
                         <span className="block dark:text-white text-black mb-2">Premium Classic</span>
-                        <span className="dark:text-white/40 text-black/40 italic font-light">
+                        <span className="dark:text-white/60 text-gray-500 italic font-light">
                             Entertainment
                         </span>
                     </h1>
 
-                    <p className="text-lg dark:text-white/50 text-black/50 max-w-2xl leading-relaxed font-light mb-12">
+                    <p className="text-lg dark:text-white/60 text-gray-700 max-w-2xl leading-relaxed font-medium mb-12">
                         Delivering world-class production values and storytelling excellence. Crafting visual narratives with uncompromising quality.
                     </p>
 

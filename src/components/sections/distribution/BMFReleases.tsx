@@ -43,10 +43,10 @@ const BMFReleases = () => {
     const { playTrack } = usePlayer();
 
     return (
-        <section className="py-20 bg-[#030712] relative overflow-hidden">
+        <section className="py-20 dark:bg-[#030712] bg-gray-50 relative overflow-hidden transition-colors duration-700">
             {/* Background Gradients */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none dark:opacity-100 opacity-40"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none dark:opacity-100 opacity-40"></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle badge="Portfolio" title="Recent Releases" subtitle="Discover the latest tracks distributed by BMF Music." />
@@ -59,7 +59,7 @@ const BMFReleases = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-300 hover:-translate-y-2"
+                            className="group relative dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-300 hover:-translate-y-2"
                         >
                             {/* Image Container */}
                             <div className="relative aspect-square overflow-hidden">
@@ -72,7 +72,7 @@ const BMFReleases = () => {
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                                     <button
                                         onClick={() => playTrack(release)}
-                                        className="p-3 bg-red-500 rounded-full text-white transform hover:scale-110 transition-transform hover:shadow-lg hover:shadow-red-500/50"
+                                        className="p-3 bg-red-500 rounded-full dark:text-white text-black transform hover:scale-110 transition-transform hover:shadow-lg hover:shadow-red-500/50"
                                     >
                                         <Play fill="currentColor" size={24} />
                                     </button>
@@ -81,12 +81,12 @@ const BMFReleases = () => {
 
                             {/* Content */}
                             <div className="p-5">
-                                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-red-400 transition-colors">
+                                <h3 className="text-xl font-bold dark:text-white text-black mb-1 group-hover:text-red-400 transition-colors">
                                     {release.title}
                                 </h3>
-                                <p className="text-gray-400 text-sm mb-3">{release.artist}</p>
+                                <p className="dark:text-gray-400 text-gray-600 text-sm mb-3">{release.artist}</p>
 
-                                <div className="flex items-center justify-between text-xs text-gray-500 border-t border-white/10 pt-3">
+                                <div className="flex items-center justify-between text-xs text-gray-500 border-t dark:border-white/10 border-black/10 pt-3">
                                     <span className="flex items-center gap-1">
                                         <Music2 size={12} /> {release.genre}
                                     </span>
@@ -98,8 +98,8 @@ const BMFReleases = () => {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <p className="text-gray-400 mb-6">Want to see your release here?</p>
-                    <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-all transform hover:scale-105">
+                    <p className="dark:text-gray-400 text-gray-600 mb-6">Want to see your release here?</p>
+                    <button className="px-8 py-3 bg-red-600 hover:bg-red-700 dark:text-white text-black rounded-full font-medium transition-all transform hover:scale-105">
                         Distribute Now
                     </button>
                 </div>

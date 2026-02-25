@@ -12,21 +12,21 @@ export default function ProductionTabs() {
     const [activeTab, setActiveTab] = useState<'production' | 'post-production'>('production');
 
     return (
-        <div className="pt-24 min-h-screen bg-black text-white">
+        <div className="pt-24 min-h-screen dark:bg-black bg-gray-50 dark:text-white text-black transition-colors duration-700">
             {/* Tab Navigation */}
             <div className="container mx-auto px-6 py-8">
-                <div className="flex flex-col sm:flex-row justify-center items-center bg-gray-900/50 p-2 rounded-2xl md:rounded-full border border-white/10 max-w-2xl mx-auto backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row justify-center items-center dark:bg-gray-900/50 bg-white/50 p-2 rounded-2xl md:rounded-full border dark:border-white/10 border-black/10 max-w-2xl mx-auto backdrop-blur-md">
                     <button
                         onClick={() => setActiveTab('production')}
                         className={`relative w-full sm:w-1/2 flex items-center justify-center gap-3 px-8 py-4 rounded-xl md:rounded-full text-lg font-bold transition-all duration-300 ${activeTab === 'production'
-                            ? 'text-black'
-                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            ? 'dark:text-black text-gray-900'
+                            : 'dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-black dark:hover:bg-white/5 hover:bg-black/5'
                             }`}
                     >
                         {activeTab === 'production' && (
                             <motion.div
                                 layoutId="activeTab"
-                                className="absolute inset-0 bg-white rounded-xl md:rounded-full shadow-lg shadow-white/10"
+                                className="absolute inset-0 dark:bg-white bg-white rounded-xl md:rounded-full shadow-lg dark:shadow-white/10 shadow-black/5 border border-black/5 dark:border-transparent"
                             />
                         )}
                         <span className="relative z-10 flex items-center gap-2">
@@ -38,8 +38,8 @@ export default function ProductionTabs() {
                     <button
                         onClick={() => setActiveTab('post-production')}
                         className={`relative w-full sm:w-1/2 flex items-center justify-center gap-3 px-8 py-4 rounded-xl md:rounded-full text-lg font-bold transition-all duration-300 ${activeTab === 'post-production'
-                            ? 'text-white'
-                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            ? 'dark:text-white text-white'
+                            : 'dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-black dark:hover:bg-white/5 hover:bg-black/5'
                             }`}
                     >
                         {activeTab === 'post-production' && (

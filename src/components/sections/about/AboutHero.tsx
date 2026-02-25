@@ -10,7 +10,7 @@ const AboutHero = () => {
             <div className="absolute inset-0 bg-gradient-to-t dark:from-[#050505] from-gray-50 dark:via-black/80 via-gray-50/80 to-transparent" />
 
             {/* Subtle Yellow Glow */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 rounded-full w-[600px] h-[400px] bg-amber-500/5 blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 rounded-full w-[600px] h-[400px] bg-amber-500/5 blur-[120px] pointer-events-none dark:opacity-100 opacity-40" />
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-20">
                 <motion.div

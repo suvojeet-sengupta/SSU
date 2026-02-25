@@ -36,22 +36,22 @@ const companies = [
 
 const AboutContent = () => {
     return (
-        <section className="relative py-20 bg-[#030712] text-white">
+        <section className="relative py-20 dark:bg-[#030712] bg-white dark:text-white text-black transition-colors duration-700">
             <div className="container mx-auto px-6">
 
                 {/* Our Story Section */}
                 <div className="mb-24 max-w-5xl mx-auto">
                     <SectionTitle badge="History" title="Our Story" subtitle="A journey of legacy, innovation, and expansion." />
 
-                    <div className="prose prose-invert prose-lg max-w-none text-gray-400 leading-relaxed space-y-6 mt-8">
+                    <div className="prose dark:prose-invert prose-lg max-w-none dark:text-gray-400 text-gray-700 leading-relaxed space-y-6 mt-8">
                         <p>
-                            <strong className="text-white">Shyam Surma CineVerse</strong> is a creative venture under the <strong className="text-white">Ghosal Group</strong>, whose foundation was laid in <span className="text-yellow-400">1995</span> with the establishment of <strong>Ghosal Event Company</strong> by <strong>Ranjit Ghosal</strong>. He built a strong reputation across Wedding Events, Corporate Events, and multi-sector management.
+                            <strong className="dark:text-white text-black">Shyam Surma CineVerse</strong> is a creative venture under the <strong className="dark:text-white text-black">Ghosal Group</strong>, whose foundation was laid in <span className="text-yellow-500">1995</span> with the establishment of <strong>Ghosal Event Company</strong> by <strong>Ranjit Ghosal</strong>. He built a strong reputation across Wedding Events, Corporate Events, and multi-sector management.
                         </p>
                         <p>
-                            Over the years, his son <strong>Surojit Ghosal</strong> stepped forward with a modern vision. In 2017, he launched his first Music Label, which has now distributed <span className="text-green-400">1000+ songs</span>. After completing filmmaking studies from <strong className="text-white">T-Series StageWorks Academy</strong> in 2020, he founded <strong>Premium Classic Entertainment</strong>.
+                            Over the years, his son <strong>Surojit Ghosal</strong> stepped forward with a modern vision. In 2017, he launched his first Music Label, which has now distributed <span className="text-green-500">1000+ songs</span>. After completing filmmaking studies from <strong className="dark:text-white text-black">T-Series StageWorks Academy</strong> in 2020, he founded <strong>Premium Classic Entertainment</strong>.
                         </p>
                         <p>
-                            Combining expertise in filmmaking and digital marketing, Surojit Ghosal and <strong className="text-white">Mouma Sengupta</strong> launched their advertisement venture: <strong className="text-cyan-400 text-xl">Shyam Surma CineVerse</strong> — a platform created to empower artists with affordable, result-driven marketing solutions.
+                            Combining expertise in filmmaking and digital marketing, Surojit Ghosal and <strong className="dark:text-white text-black">Mouma Sengupta</strong> launched their advertisement venture: <strong className="text-cyan-500 text-xl">Shyam Surma CineVerse</strong> — a platform created to empower artists with affordable, result-driven marketing solutions.
                         </p>
                     </div>
                 </div>
@@ -68,14 +68,14 @@ const AboutContent = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group`}
+                                className={`p-8 rounded-3xl dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 dark:hover:bg-white/10 hover:bg-black/10 transition-colors group`}
                             >
                                 <div className={`w-14 h-14 rounded-2xl bg-${company.color}-500/10 flex items-center justify-center mb-6 border border-${company.color}-500/20 group-hover:scale-110 transition-transform`}>
                                     {company.icon}
                                 </div>
                                 <h3 className="text-2xl font-bold mb-1">{company.title}</h3>
                                 <div className={`text-sm font-medium uppercase tracking-wider text-${company.color}-400 mb-4`}>{company.type}</div>
-                                <p className="text-gray-400 leading-relaxed">
+                                <p className="dark:text-gray-400 text-gray-600 leading-relaxed">
                                     {company.description}
                                 </p>
                             </motion.div>
@@ -97,14 +97,14 @@ const AboutContent = () => {
                                 <div className="mt-1 bg-blue-500/20 p-2 rounded-lg h-fit"><Megaphone size={20} className="text-blue-400" /></div>
                                 <div>
                                     <h4 className="text-xl font-bold mb-2">Movie, Short Films & Music Promotion</h4>
-                                    <p className="text-gray-400">Complete digital promotion including social media marketing, trailer launch campaigns, poster promotions, and targeted audience outreach.</p>
+                                    <p className="dark:text-gray-400 text-gray-600">Complete digital promotion including social media marketing, trailer launch campaigns, poster promotions, and targeted audience outreach.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div className="mt-1 bg-green-500/20 p-2 rounded-lg h-fit"><Music size={20} className="text-green-400" /></div>
                                 <div>
                                     <h4 className="text-xl font-bold mb-2">OTT & Music Distribution</h4>
-                                    <p className="text-gray-400">Distributing music to leading OTT platforms and providing professional YouTube Content ID setup to protect creator rights and maximize revenue.</p>
+                                    <p className="dark:text-gray-400 text-gray-600">Distributing music to leading OTT platforms and providing professional YouTube Content ID setup to protect creator rights and maximize revenue.</p>
                                 </div>
                             </div>
                         </div>
@@ -118,10 +118,10 @@ const AboutContent = () => {
                     >
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
                         <div className="relative z-10">
-                            <h3 className="text-2xl font-bold mb-4 text-white">Our Purpose</h3>
-                            <p className="text-gray-300 mb-6"> Our mission is to support creators working with <span className="text-white font-semibold">limited budgets</span>.</p>
-                            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl inline-block mb-6 border border-white/10">
-                                <p className="text-2xl md:text-3xl font-serif italic text-cyan-200">
+                            <h3 className="text-2xl font-bold mb-4 dark:text-white text-gray-900">Our Purpose</h3>
+                            <p className="dark:text-gray-300 text-gray-700 mb-6"> Our mission is to support creators working with <span className="dark:text-white text-black font-semibold">limited budgets</span>.</p>
+                            <div className="dark:bg-white/10 bg-black/5 backdrop-blur-md p-6 rounded-2xl inline-block mb-6 border dark:border-white/10 border-black/10">
+                                <p className="text-2xl md:text-3xl font-serif italic dark:text-cyan-200 text-cyan-800">
                                     “Good marketing should be accessible to everyone.”
                                 </p>
                             </div>

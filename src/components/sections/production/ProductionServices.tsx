@@ -50,11 +50,11 @@ const services = [
 
 const ProductionServices = () => {
     return (
-        <section className="py-24 bg-black relative overflow-hidden" id="services">
+        <section className="py-24 dark:bg-black bg-gray-50 relative overflow-hidden transition-colors duration-700" id="services">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Core Services</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-bold dark:text-white text-black mb-4">Our Core Services</h2>
+                    <p className="dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
                         Trusted by the industry for delivering excellence in every frame.
                     </p>
                 </div>
@@ -72,22 +72,22 @@ const ProductionServices = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className={`group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 ${isLastAndOdd ? 'md:col-span-2 lg:col-span-1 xl:col-span-1' : ''}`}
+                                className={`group relative p-6 rounded-2xl dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/20 transition-all duration-300 hover:-translate-y-1 ${isLastAndOdd ? 'md:col-span-2 lg:col-span-1 xl:col-span-1' : ''}`}
                             >
                                 {/* Gradient Hover Effect */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
 
-                                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 text-white shadow-lg`}>
-                                    <Icon size={24} />
+                                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg`}>
+                                    <Icon size={24} className="text-white" />
                                 </div>
 
-                                <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
-                                <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                                <h3 className="text-lg font-bold dark:text-white text-black mb-3">{service.title}</h3>
+                                <p className="text-sm dark:text-gray-400 text-gray-600 mb-6 leading-relaxed">
                                     {service.description}
                                 </p>
 
-                                <div className="mt-auto pt-4 border-t border-white/5">
-                                    <div className="flex items-center text-sm font-medium text-white/50 group-hover:text-white transition-colors">
+                                <div className="mt-auto pt-4 border-t dark:border-white/5 border-black/5">
+                                    <div className="flex items-center text-sm font-medium dark:text-white/50 text-black/50 dark:group-hover:text-white group-hover:text-black transition-colors">
                                         <span>Details</span>
                                         <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
                                     </div>

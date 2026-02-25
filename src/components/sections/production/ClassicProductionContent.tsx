@@ -7,7 +7,7 @@ import CloudinaryImage from '@/components/common/CloudinaryImage';
 
 const ClassicProductionContent = () => {
     return (
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
+        <section className="py-20 dark:bg-gradient-to-b dark:from-black dark:to-gray-900 bg-white dark:text-white text-black relative overflow-hidden transition-colors duration-700">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -25,7 +25,7 @@ const ClassicProductionContent = () => {
                             About <span className="text-blue-500">Premium Classic Entertainment</span>
                         </h2>
 
-                        <div className="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-lg relative h-40 w-full max-w-md bg-white/5">
+                        <div className="mb-8 rounded-xl overflow-hidden border dark:border-white/10 border-black/10 shadow-lg relative h-40 w-full max-w-md dark:bg-white/5 bg-black/5">
                             <CloudinaryImage
                                 src="PCE-banner"
                                 alt="Premium Classic Entertainment Banner"
@@ -34,7 +34,7 @@ const ClassicProductionContent = () => {
                             />
                         </div>
 
-                        <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <div className="space-y-6 dark:text-gray-300 text-gray-700 text-lg leading-relaxed">
                             <p>
                                 <strong>Premium Classic Entertainment</strong> is the official Film & Media Production House of the <strong>Ghosal Group</strong>, founded with a vision to create meaningful, high-quality and visually compelling entertainment.
                             </p>
@@ -47,7 +47,7 @@ const ClassicProductionContent = () => {
                         </div>
 
                         <div className="mt-12 space-y-8">
-                            <h3 className="text-2xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-4">What We Create</h3>
+                            <h3 className="text-2xl font-bold dark:text-white text-black mb-4 border-l-4 border-blue-500 pl-4">What We Create</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {[
                                     { title: "Feature Films & Bengali Movies", desc: "Emotion-driven stories crafted with quality direction, cinematography and production value." },
@@ -56,9 +56,9 @@ const ClassicProductionContent = () => {
                                     { title: "Corporate Films & Branding Videos", desc: "Professional brand films that communicate identity, purpose and message with clarity." },
                                     { title: "Promotional & Digital Content", desc: "Trailers, teasers, ad films and social media visuals created for maximum audience impact." }
                                 ].map((item, idx) => (
-                                    <div key={idx} className="bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <div key={idx} className="dark:bg-white/5 bg-black/5 p-4 rounded-xl border dark:border-white/10 border-black/10 dark:hover:bg-white/10 hover:bg-black/10 transition-colors">
                                         <h4 className="font-bold text-blue-400 mb-2">{item.title}</h4>
-                                        <p className="text-sm text-gray-400">{item.desc}</p>
+                                        <p className="text-sm dark:text-gray-400 text-gray-600">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>
@@ -76,7 +76,7 @@ const ClassicProductionContent = () => {
                             transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            <div className="aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800 relative group flex items-center justify-center">
+                            <div className="aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl border dark:border-white/10 border-black/10 dark:bg-gray-800 bg-gray-50 relative group flex items-center justify-center">
                                 {/* Background Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-black/80 z-0"></div>
 
@@ -84,7 +84,7 @@ const ClassicProductionContent = () => {
                                     <motion.div
                                         whileHover={{ scale: 1.1, rotate: 5 }}
                                         transition={{ type: "spring", stiffness: 300 }}
-                                        className="w-40 h-40 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border border-white/20 shadow-xl overflow-hidden p-4"
+                                        className="w-40 h-40 dark:bg-white/10 bg-black/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border dark:border-white/20 border-black/20 shadow-xl overflow-hidden p-4"
                                     >
                                         <CloudinaryImage
                                             src="PCE-logo"
@@ -94,8 +94,8 @@ const ClassicProductionContent = () => {
                                             className="object-contain w-full h-full"
                                         />
                                     </motion.div>
-                                    <h3 className="text-3xl font-bold text-white tracking-wide">Premium Classic Entertainment</h3>
-                                    <p className="text-gray-400 mt-2 font-medium">Production House</p>
+                                    <h3 className="text-3xl font-bold dark:text-white text-black tracking-wide">Premium Classic Entertainment</h3>
+                                    <p className="dark:text-gray-400 text-gray-600 mt-2 font-medium">Production House</p>
                                 </div>
                             </div>
                             {/* Decorative elements */}
@@ -110,7 +110,7 @@ const ClassicProductionContent = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="bg-blue-600/10 p-8 rounded-2xl border border-blue-500/20"
                         >
-                            <h3 className="text-2xl font-bold text-white mb-6">Our Approach</h3>
+                            <h3 className="text-2xl font-bold dark:text-white text-black mb-6">Our Approach</h3>
                             <ul className="space-y-4">
                                 {[
                                     "Creative storytelling",
@@ -121,11 +121,11 @@ const ClassicProductionContent = () => {
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-3">
                                         <CheckCircle className="text-blue-400 shrink-0" size={20} />
-                                        <span className="text-gray-300 font-medium">{item}</span>
+                                        <span className="dark:text-gray-300 text-gray-700 font-medium">{item}</span>
                                     </li>
                                 ))}
                             </ul>
-                            <div className="mt-8 pt-6 border-t border-white/10">
+                            <div className="mt-8 pt-6 border-t dark:border-white/10 border-black/10">
                                 <p className="text-xl font-serif italic text-blue-200">
                                     “Great stories deserve great presentation.”
                                 </p>
@@ -138,8 +138,8 @@ const ClassicProductionContent = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <h3 className="text-xl font-bold text-white mb-3">Our Vision</h3>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h3 className="text-xl font-bold dark:text-white text-black mb-3">Our Vision</h3>
+                            <p className="dark:text-gray-400 text-gray-600 leading-relaxed">
                                 To become a leading production house that nurtures creativity, supports independent creators and produces cinema that connects with audiences across India.
                             </p>
                             <Link href="/gallery/post-production" className="inline-flex items-center gap-2 mt-6 text-blue-400 hover:text-blue-300 font-semibold transition-colors">

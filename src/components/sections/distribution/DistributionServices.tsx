@@ -36,21 +36,21 @@ const DistributionServices = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.2 }}
                     viewport={{ once: true }}
-                    className={`group relative p-8 rounded-3xl bg-gradient-to-br ${service.gradient} border border-white/10 ${service.border} backdrop-blur-sm transition-all duration-500 hover:transform hover:-translate-y-2`}
+                    className={`group relative p-8 rounded-3xl bg-gradient-to-br ${service.gradient} border dark:border-white/10 border-black/10 ${service.border} backdrop-blur-sm transition-all duration-500 hover:transform hover:-translate-y-2`}
                 >
-                    <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
+                    <div className="absolute inset-0 dark:bg-white/5 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
 
                     <div className="relative z-10">
-                        <div className="w-16 h-16 rounded-2xl bg-black/40 flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                        <div className="w-16 h-16 rounded-2xl dark:bg-black/40 bg-gray-100 flex items-center justify-center mb-6 border dark:border-white/10 border-black/10 group-hover:scale-110 transition-transform duration-500">
                             {service.icon}
                         </div>
 
-                        <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                        <p className="text-gray-400 leading-relaxed mb-6">
+                        <h3 className="text-2xl font-bold dark:text-white text-black mb-4">{service.title}</h3>
+                        <p className="dark:text-gray-400 text-gray-600 leading-relaxed mb-6">
                             {service.description}
                         </p>
 
-                        <button className="flex items-center gap-2 text-sm font-bold text-white uppercase tracking-wider group-hover:gap-4 transition-all">
+                        <button className="flex items-center gap-2 text-sm font-bold dark:text-white text-black uppercase tracking-wider group-hover:gap-4 transition-all">
                             Learn More <ArrowRight size={16} />
                         </button>
                     </div>

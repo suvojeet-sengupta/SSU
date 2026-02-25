@@ -8,8 +8,8 @@ const AdvertisementHero = () => {
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale dark:mix-blend-screen mix-blend-multiply transition-all duration-700"></div>
 
             {/* Ambient Glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] dark:bg-pink-600/20 bg-pink-500/10 rounded-full blur-[120px] dark:mix-blend-screen mix-blend-multiply pointer-events-none transition-all duration-700"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] dark:bg-cyan-600/10 bg-cyan-500/5 rounded-full blur-[100px] dark:mix-blend-screen mix-blend-multiply pointer-events-none transition-all duration-700"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] dark:bg-pink-600/20 bg-pink-500/10 rounded-full blur-[120px] pointer-events-none transition-all duration-700 dark:opacity-100 opacity-40"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] dark:bg-cyan-600/10 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none transition-all duration-700 dark:opacity-100 opacity-40"></div>
 
             <div className="container mx-auto px-6 relative z-10 text-center pt-20 pb-12">
                 <motion.div

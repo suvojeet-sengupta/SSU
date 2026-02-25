@@ -97,10 +97,10 @@ const TeamCard = ({ member, onSelect, index }: { member: typeof teamMembers[0], 
                     onSelect();
                 }
             }}
-            className="group relative p-1 rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent hover:from-white/20 transition-all duration-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="group relative p-1 rounded-[2rem] bg-gradient-to-br dark:from-white/10 from-black/5 to-transparent dark:hover:from-white/20 hover:from-black/10 transition-all duration-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/50"
         >
             {/* Inner Card */}
-            <div className="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-6 overflow-hidden border border-white/5 group-hover:border-transparent transition-all">
+            <div className="relative h-full dark:bg-[#0a0a0a] bg-white rounded-[1.9rem] p-6 overflow-hidden border dark:border-white/5 border-black/5 group-hover:border-transparent transition-all">
 
                 {/* Hover Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -108,8 +108,8 @@ const TeamCard = ({ member, onSelect, index }: { member: typeof teamMembers[0], 
                 <div className="relative z-10 flex flex-col items-center text-center">
                     {/* Image Container */}
                     <div className="relative mb-6">
-                        <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-45 translate-x-[-100%] group-hover:animate-shine`}></div>
-                        <div className={`w-36 h-36 rounded-full p-[2px] bg-gradient-to-tr from-gray-700 to-gray-900 ${member.border} transition-colors duration-500 overflow-hidden`}>
+                        <div className={`absolute inset-0 bg-gradient-to-r from-transparent dark:via-white/20 via-black/10 to-transparent rotate-45 translate-x-[-100%] group-hover:animate-shine`}></div>
+                        <div className={`w-36 h-36 rounded-full p-[2px] bg-gradient-to-tr dark:from-gray-700 dark:to-gray-900 from-gray-200 to-gray-400 ${member.border} transition-colors duration-500 overflow-hidden`}>
                             {member.image.startsWith('http') || member.image.startsWith('/') ? (
                                 <img
                                     src={member.image}
@@ -133,21 +133,21 @@ const TeamCard = ({ member, onSelect, index }: { member: typeof teamMembers[0], 
                                 />
                             )}
                         </div>
-                        <div className={`absolute bottom-0 right-0 w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center border border-white/10 ${member.color} shadow-lg group-hover:scale-110 transition-transform`}>
+                        <div className={`absolute bottom-0 right-0 w-10 h-10 rounded-full dark:bg-[#0a0a0a] bg-white flex items-center justify-center border dark:border-white/10 border-black/10 ${member.color.replace('group-hover:text-', 'text-')} shadow-lg group-hover:scale-110 transition-transform`}>
                             {member.icon}
                         </div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors">{member.name}</h3>
+                    <h3 className="text-2xl font-bold dark:text-white text-black mb-2 transition-colors">{member.name}</h3>
                     <p className={`text-sm font-bold uppercase tracking-widest mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-600 ${member.color} transition-all`}>
                         {member.role}
                     </p>
 
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4 border-t border-white/5 pt-4 line-clamp-3">
+                    <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed mb-4 border-t dark:border-white/5 border-black/5 pt-4 line-clamp-3">
                         {member.bio}
                     </p>
 
-                    <span className="text-xs text-white/40 mt-auto flex items-center gap-1 group-hover:text-white/80 transition-colors">
+                    <span className="text-xs dark:text-white/40 text-black/40 mt-auto flex items-center gap-1 dark:group-hover:text-white/80 group-hover:text-black/80 transition-colors">
                         <Clapperboard size={12} /> Click to view details
                     </span>
                 </div>
@@ -172,18 +172,18 @@ const TeamMemberModal = ({ member, onClose }: { member: typeof teamMembers[0], o
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 dark:bg-black/90 bg-white/90 backdrop-blur-md"
         >
             <motion.div
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-[#0f0f0f] border border-white/10 w-full max-w-4xl max-h-[85vh] md:min-h-[400px] rounded-3xl shadow-2xl relative flex flex-col md:flex-row overflow-hidden"
+                className="dark:bg-[#0f0f0f] bg-white border dark:border-white/10 border-black/10 w-full max-w-4xl max-h-[85vh] md:min-h-[400px] rounded-3xl shadow-2xl relative flex flex-col md:flex-row overflow-hidden"
             >
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 z-20 p-2 bg-black/50 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+                    className="absolute top-4 right-4 z-20 p-2 dark:bg-black/50 bg-white/50 rounded-full dark:text-white/50 text-black/50 dark:hover:text-white hover:text-black dark:hover:bg-white/10 hover:bg-black/10 transition-colors focus:outline-none focus:ring-2 dark:focus:ring-white/50 focus:ring-black/20"
                     aria-label="Close modal"
                 >
                     <X size={24} />
@@ -212,39 +212,39 @@ const TeamMemberModal = ({ member, onClose }: { member: typeof teamMembers[0], o
                             className="object-cover"
                         />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent md:bg-gradient-to-r pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t dark:from-[#0f0f0f] from-white to-transparent md:bg-gradient-to-r pointer-events-none"></div>
                 </div>
 
                 {/* Content - Scrollable Region */}
-                <div className="p-8 md:p-12 md:w-3/5 flex flex-col flex-1 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20">
-                    <div className="mb-6 pr-8"> {/* Added right padding to prevent close button overlap */}
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">{member.name}</h2>
+                <div className="p-8 md:p-12 md:w-3/5 flex flex-col flex-1 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent dark:[&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:bg-black/10 [&::-webkit-scrollbar-thumb]:rounded-full dark:hover:[&::-webkit-scrollbar-thumb]:bg-white/20 hover:[&::-webkit-scrollbar-thumb]:bg-black/20">
+                    <div className="mb-6 pr-8">
+                        <h2 className="text-4xl md:text-5xl font-bold dark:text-white text-black mb-2">{member.name}</h2>
                         <p className={`text-xl font-medium ${member.color.replace('group-hover:', '')}`}>
                             {member.role}
                         </p>
                     </div>
 
-                    <blockquote className="border-l-4 border-white/10 pl-4 italic text-gray-400 mb-8 text-lg">
+                    <blockquote className="border-l-4 dark:border-white/10 border-black/10 pl-4 italic dark:text-gray-400 text-gray-600 mb-8 text-lg">
                         "{member.quote}"
                     </blockquote>
 
-                    <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                    <p className="dark:text-gray-300 text-gray-800 leading-relaxed text-lg mb-8">
                         {member.bio}
                     </p>
 
                     <div className="flex gap-4 mt-auto">
                         {member.socials?.linkedin && (
-                            <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all hover:scale-110 active:scale-95 border border-white/5 focus:outline-none focus:ring-2 focus:ring-white/50">
+                            <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:text-white text-black transition-all hover:scale-110 active:scale-95 border dark:border-white/5 border-black/5 focus:outline-none focus:ring-2 dark:focus:ring-white/50 focus:ring-black/20">
                                 <Linkedin size={20} />
                             </a>
                         )}
                         {member.socials?.twitter && (
-                            <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all hover:scale-110 active:scale-95 border border-white/5 focus:outline-none focus:ring-2 focus:ring-white/50">
+                            <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:text-white text-black transition-all hover:scale-110 active:scale-95 border dark:border-white/5 border-black/5 focus:outline-none focus:ring-2 dark:focus:ring-white/50 focus:ring-black/20">
                                 <Twitter size={20} />
                             </a>
                         )}
                         {member.socials?.mail && (
-                            <a href={member.socials.mail} className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all hover:scale-110 active:scale-95 border border-white/5 focus:outline-none focus:ring-2 focus:ring-white/50">
+                            <a href={member.socials.mail} className="p-3 rounded-full dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:text-white text-black transition-all hover:scale-110 active:scale-95 border dark:border-white/5 border-black/5 focus:outline-none focus:ring-2 dark:focus:ring-white/50 focus:ring-black/20">
                                 <Mail size={20} />
                             </a>
                         )}

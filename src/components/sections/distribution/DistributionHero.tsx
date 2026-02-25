@@ -15,7 +15,7 @@ const DistributionHero = () => {
             <div className="absolute inset-0 bg-gradient-to-t dark:from-black dark:via-black/90 dark:to-black/40 from-gray-50 via-gray-50/90 to-transparent" />
 
             {/* Subtle Crimson Glow */}
-            <div className="absolute top-1/4 left-1/4 rounded-full w-[500px] h-[500px] bg-red-500/5 blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 left-1/4 rounded-full w-[500px] h-[500px] bg-red-500/5 blur-[120px] pointer-events-none dark:opacity-100 opacity-40" />
 
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-10 pb-20">
 
@@ -33,7 +33,7 @@ const DistributionHero = () => {
 
                     <h1 className="text-5xl md:text-7xl font-semibold dark:text-white text-black tracking-tight leading-[1.1] mb-6">
                         BMF <br />
-                        <span className="dark:text-white/40 text-black/40 font-light italic">MUSIC</span>
+                        <span className="dark:text-white/40 text-gray-500 font-light italic">MUSIC</span>
                     </h1>
 
                     <p className="text-lg dark:text-white/50 text-black/50 leading-relaxed mb-10 font-light">
