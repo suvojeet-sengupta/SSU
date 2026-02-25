@@ -1,10 +1,29 @@
-import { Home, Music, Globe, Users, Star, Mail, Megaphone, Clapperboard } from 'lucide-react';
+import { Home, Music, Globe, Users, Star, Mail, Megaphone, Clapperboard, Film } from 'lucide-react';
 
-export const NAV_ITEMS = [
+export interface NavItemType {
+    name: string;
+    icon: any;
+    href?: string;
+    subItems?: Array<{
+        name: string;
+        icon: any;
+        href: string;
+        comingSoon?: boolean;
+    }>;
+}
+
+export const NAV_ITEMS: NavItemType[] = [
     { name: 'Home', icon: Home, href: '/' },
     { name: 'Production', icon: Clapperboard, href: '/production' },
     { name: 'Event', icon: Star, href: '/event' },
-    { name: 'Distribution', icon: Globe, href: '/distribution' },
+    {
+        name: 'Distribution',
+        icon: Globe,
+        subItems: [
+            { name: 'Music Distribution', icon: Music, href: '/distribution' },
+            { name: 'Movie Distribution', icon: Film, href: '#', comingSoon: true }
+        ]
+    },
     { name: 'Advert', icon: Megaphone, href: '/advertisement' },
     { name: 'Team', icon: Users, href: '/team' },
     { name: 'About', icon: Star, href: '/about' },
