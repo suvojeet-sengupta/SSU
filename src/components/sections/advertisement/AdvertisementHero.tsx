@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 
 const AdvertisementHero = () => {
     return (
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-black">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-black pt-20">
             {/* Abstract Background */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[100px] mix-blend-screen"></div>
 
-            <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="container mx-auto px-6 relative z-10 text-center pt-20 pb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
