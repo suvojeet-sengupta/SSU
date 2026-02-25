@@ -1,4 +1,4 @@
-'use client';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Construction } from 'lucide-react';
 
@@ -8,6 +8,23 @@ interface DevelopmentPopupProps {
 }
 
 const DevelopmentPopup = ({ isOpen, onClose }: DevelopmentPopupProps) => {
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && isOpen) onClose();
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen, onClose]);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isOpen]);
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -26,16 +43,19 @@ const DevelopmentPopup = ({ isOpen, onClose }: DevelopmentPopupProps) => {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="dev-popup-title"
                         className="relative w-full max-w-md bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden pointer-events-auto"
                     >
                         {/* Header Gradient */}
                         <div className="h-2 w-full bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500" />
 
                         <div className="p-6 relative">
-                            {/* Close Button */}
                             <button
                                 onClick={onClose}
-                                className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-full transition-all"
+                                aria-label="Close Development Popup"
+                                className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white/50"
                             >
                                 <X size={20} />
                             </button>
@@ -45,7 +65,7 @@ const DevelopmentPopup = ({ isOpen, onClose }: DevelopmentPopupProps) => {
                                     <Construction size={40} className="text-red-400" />
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-white font-cinzel">
+                                <h3 id="dev-popup-title" className="text-2xl font-bold text-white font-cinzel">
                                     Under Development
                                 </h3>
 
@@ -56,7 +76,7 @@ const DevelopmentPopup = ({ isOpen, onClose }: DevelopmentPopupProps) => {
                                 <div className="pt-4 w-full">
                                     <button
                                         onClick={onClose}
-                                        className="w-full py-3 px-6 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl text-white font-medium transition-all duration-300"
+                                        className="w-full py-3 px-6 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
                                     >
                                         Got it
                                     </button>

@@ -9,35 +9,35 @@ const services = [
         title: "Distribution",
         description: "Release your music to 150+ stores worldwide including Spotify, Apple Music, and Instagram.",
         link: "/distribution",
-        color: "cyan"
+        styles: { glow: "bg-cyan-500/10", bg: "bg-cyan-500/20", text: "text-cyan-400" }
     },
     {
         icon: <Megaphone size={32} />,
         title: "Advertisement",
         description: "Strategic campaigns across social media, YouTube, and digital platforms to amplify your reach.",
         link: "/advertisement",
-        color: "pink"
+        styles: { glow: "bg-pink-500/10", bg: "bg-pink-500/20", text: "text-pink-400" }
     },
     {
         icon: <Building2 size={32} />,
         title: "Event Management",
         description: "Executing seamless corporate events, concerts, and large-scale productions with precision.",
         link: "/event",
-        color: "purple"
+        styles: { glow: "bg-purple-500/10", bg: "bg-purple-500/20", text: "text-purple-400" }
     },
     {
         icon: <Clapperboard size={32} />,
         title: "Production House",
         description: "Full-scale film production services from pre-production to filming and execution.",
         link: "/production",
-        color: "yellow"
+        styles: { glow: "bg-yellow-500/10", bg: "bg-yellow-500/20", text: "text-yellow-400" }
     },
     {
         icon: <Film size={32} />,
         title: "Post-Production",
         description: "State-of-the-art editing, VFX, color grading, and sound design for cinematic excellence.",
         link: "/production",
-        color: "blue"
+        styles: { glow: "bg-blue-500/10", bg: "bg-blue-500/20", text: "text-blue-400" }
     }
 ];
 
@@ -55,9 +55,9 @@ const HomeServices = () => {
                             viewport={{ once: true }}
                             className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors overflow-hidden"
                         >
-                            <div className={`absolute top-0 right-0 p-32 bg-${service.color}-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity opacity-0 group-hover:opacity-100`}></div>
+                            <div className={`absolute top-0 right-0 p-32 ${service.styles.glow} rounded-full blur-3xl -mr-16 -mt-16 transition-opacity opacity-0 group-hover:opacity-100`}></div>
 
-                            <div className={`w-16 h-16 rounded-2xl bg-${service.color}-500/20 flex items-center justify-center text-${service.color}-400 mb-6 group-hover:scale-110 transition-transform`}>
+                            <div className={`w-16 h-16 rounded-2xl ${service.styles.bg} flex items-center justify-center ${service.styles.text} mb-6 group-hover:scale-110 transition-transform`}>
                                 {service.icon}
                             </div>
 
@@ -66,7 +66,7 @@ const HomeServices = () => {
                                 {service.description}
                             </p>
 
-                            <Link href={service.link} className={`inline-flex items-center gap-2 text-${service.color}-400 font-medium group-hover:gap-3 transition-all`}>
+                            <Link href={service.link} className={`inline-flex items-center gap-2 ${service.styles.text} font-medium group-hover:gap-3 transition-all`}>
                                 Explore Services <ArrowRight size={18} />
                             </Link>
                         </motion.div>

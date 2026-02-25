@@ -8,21 +8,21 @@ const works = [
         title: "Global Chart Toppers",
         subtitle: "Distribution across 150+ stores",
         image: "bg-gradient-to-tr from-cyan-900 to-blue-900",
-        accent: "cyan"
+        styles: { bg: "bg-cyan-500/20", border: "border-cyan-500/20", text: "text-cyan-400" }
     },
     {
         category: "Advertising",
         title: "Brand X Campaign",
         subtitle: "Multi-channel influencer strategy",
         image: "bg-gradient-to-tr from-pink-900 to-rose-900",
-        accent: "pink"
+        styles: { bg: "bg-pink-500/20", border: "border-pink-500/20", text: "text-pink-400" }
     },
     {
         category: "Film",
         title: "Indie Film Festival",
         subtitle: "Worldwide digital premiere",
         image: "bg-gradient-to-tr from-purple-900 to-indigo-900",
-        accent: "purple"
+        styles: { bg: "bg-purple-500/20", border: "border-purple-500/20", text: "text-purple-400" }
     }
 ];
 
@@ -46,7 +46,7 @@ const FeaturedWorks = () => {
                     <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex justify-between items-end">
                             <div>
-                                <div className={`px-3 py-1 bg-${work.accent}-500/20 text-${work.accent}-400 text-xs font-bold rounded-full w-fit mb-3 border border-${work.accent}-500/20 backdrop-blur-md`}>
+                                <div className={`px-3 py-1 ${work.styles.bg} ${work.styles.text} text-xs font-bold rounded-full w-fit mb-3 border ${work.styles.border} backdrop-blur-md`}>
                                     {work.category}
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">

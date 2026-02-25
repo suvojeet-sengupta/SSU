@@ -14,22 +14,26 @@ interface GalleryGridProps {
 export default function GalleryGrid({ tag, title }: GalleryGridProps) {
     const [images, setImages] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    const fetchImages = async () => {
+        setLoading(true);
+        setError(false);
+        try {
+            // Fetch from our new API route
+            const response = await fetch(`/api/images?tag=${tag}`);
+            if (!response.ok) throw new Error('Failed to fetch');
+            const results = await response.json();
+            setImages(results);
+        } catch (error) {
+            console.error("Failed to load images", error);
+            setError(true);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                // Fetch from our new API route
-                const response = await fetch(`/api/images?tag=${tag}`);
-                if (!response.ok) throw new Error('Failed to fetch');
-                const results = await response.json();
-                setImages(results);
-            } catch (error) {
-                console.error("Failed to load images", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
         fetchImages();
     }, [tag]);
 
@@ -38,6 +42,26 @@ export default function GalleryGrid({ tag, title }: GalleryGridProps) {
             <div className="flex flex-col items-center justify-center min-h-[50vh]">
                 <Loader2 className="w-12 h-12 text-blue-500 animate-spin mb-4" />
                 <p className="text-gray-400">Loading gallery...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-[40vh] bg-red-500/10 rounded-2xl border border-red-500/20 p-8 text-center max-w-2xl mx-auto mt-12">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
+                    <AlertCircle className="w-8 h-8 text-red-500" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-white">Failed to Load Gallery</h3>
+                <p className="text-gray-400 mb-6">
+                    We encountered an issue connecting to the image server. Please try again or check your connection.
+                </p>
+                <button
+                    onClick={fetchImages}
+                    className="px-6 py-3 bg-red-500/20 hover:bg-red-500/30 text-red-300 font-medium rounded-xl border border-red-500/30 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400/50"
+                >
+                    Try Again
+                </button>
             </div>
         );
     }
@@ -75,7 +99,7 @@ export default function GalleryGrid({ tag, title }: GalleryGridProps) {
                             width="800"
                             height="450"
                             src={image.public_id}
-                            alt="Gallery Image"
+                            alt={`${title} highlight ${idx + 1}`}
                             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />

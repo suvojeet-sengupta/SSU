@@ -16,9 +16,9 @@ const Navbar = () => {
         const previous = scrollY.getPrevious() || 0;
         // Hide only if scrolled down more than 100px and moving down
         if (latest > previous && latest > 100) {
-            setHidden(true);
+            setHidden((prev) => (prev !== true ? true : prev));
         } else {
-            setHidden(false);
+            setHidden((prev) => (prev !== false ? false : prev));
         }
     });
 
