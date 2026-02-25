@@ -2,7 +2,7 @@
 
 import { usePlayer } from '@/context/PlayerContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, X, SkipForward, SkipBack, Volume2 } from 'lucide-react';
+import { Play, Pause, X, SkipForward, SkipBack, Volume2, ExternalLink } from 'lucide-react';
 
 export default function MusicPlayer() {
     const { currentTrack, isPlaying, togglePlay, closePlayer } = usePlayer();
@@ -40,7 +40,19 @@ export default function MusicPlayer() {
                                     <div className={`absolute inset-0 border-2 dark:border-white/20 border-black/20 rounded-full scale-[0.8] ${isPlaying ? 'animate-spin-slow' : ''}`}></div>
                                 </div>
                                 <div>
-                                    <h4 className="dark:text-white text-black font-bold text-sm">{currentTrack.title}</h4>
+                                    <h4 className="dark:text-white text-black font-bold text-sm flex items-center gap-2">
+                                        {currentTrack.title}
+                                        {currentTrack.link && (
+                                            <a
+                                                href={currentTrack.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="dark:text-gray-400 text-gray-600 hover:dark:text-white hover:text-black transition-colors pointer-events-auto"
+                                            >
+                                                <ExternalLink size={14} />
+                                            </a>
+                                        )}
+                                    </h4>
                                     <p className="dark:text-gray-400 text-gray-600 text-xs">{currentTrack.artist}</p>
                                 </div>
                             </div>

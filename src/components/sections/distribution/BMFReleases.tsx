@@ -6,36 +6,76 @@ import { usePlayer } from '@/context/PlayerContext';
 
 const releases = [
     {
-        title: "Neon Dreams",
-        artist: "Midnight Vibe",
+        title: "Maya",
+        artist: "Chandrima Chakraborty, Pramith Ganguly",
+        releaseDate: "2026",
+        genre: "Pop",
+        image: "https://img.youtube.com/vi/fn0Vzcouyzw/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=fn0Vzcouyzw&si=xZr2Dt3jRD0CQH7t"
+    },
+    {
+        title: "A2 Theme",
+        artist: "Chandrima, Suman Maitra",
+        releaseDate: "2026",
+        genre: "Theme",
+        image: "https://img.youtube.com/vi/UnGTOeBFK6k/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=UnGTOeBFK6k&si=9PTcC5CYv-ndccXJ"
+    },
+    {
+        title: "The Cupid Show With Shubho",
+        artist: "Durnibar Saha, Shubho",
+        releaseDate: "2026",
+        genre: "Pop",
+        image: "https://img.youtube.com/vi/GqPsl7m3VpI/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=GqPsl7m3VpI&si=5Bxcb5xBd9uBAyDO"
+    },
+    {
+        title: "Chutki ke Bhaiya",
+        artist: "Riya Jatin, Dishani Dutta",
+        releaseDate: "2026",
+        genre: "Melody",
+        image: "https://img.youtube.com/vi/tA3fAyQDej4/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=tA3fAyQDej4&si=PlwsR3dGeMpnBI5Q"
+    },
+    {
+        title: "Meghar Rumal",
+        artist: "Shaan, Anwesha Datta",
+        releaseDate: "2025",
+        genre: "Romantic",
+        image: "https://img.youtube.com/vi/P87YirJr-HQ/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=P87YirJr-HQ&si=8AksZ59zIBNVzqmX"
+    },
+    {
+        title: "Sobuj Merun Gaan",
+        artist: "Archan Chakraborty",
+        releaseDate: "2025",
+        genre: "Folk/Pop",
+        image: "https://img.youtube.com/vi/GqFL_fJjmUg/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=GqFL_fJjmUg&si=G4folHzPbMFOMLn3"
+    },
+    {
+        title: "Ebhabe Theke Jeo",
+        artist: "Ranajoy Bhattacharya, Sayani Palit",
+        releaseDate: "2025",
+        genre: "Romantic",
+        image: "https://img.youtube.com/vi/bfpNcH21OlA/hqdefault.jpg",
+        platforms: ["YouTube Music", "Spotify", "Apple Music", "JioSaavn", "Wynk", "Amazon Music"],
+        link: "https://music.youtube.com/watch?v=bfpNcH21OlA&si=nfh9SRTtjotDjc9p"
+    },
+    {
+        title: "The Pheonix",
+        artist: "OTT Release",
         releaseDate: "2024",
-        genre: "Synthwave",
-        image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop",
-        platforms: ["Spotify", "Apple Music"]
-    },
-    {
-        title: "Urban Echoes",
-        artist: "The City Sound",
-        releaseDate: "2024",
-        genre: "Hip Hop",
-        image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop",
-        platforms: ["JioSaavn", "Wynk"]
-    },
-    {
-        title: "Serenity",
-        artist: "Acoustic Soul",
-        releaseDate: "2023",
-        genre: "Ambient",
-        image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
-        platforms: ["YouTube Music"]
-    },
-    {
-        title: "Electric Pulse",
-        artist: "Digital Waves",
-        releaseDate: "2023",
-        genre: "EDM",
-        image: "https://images.unsplash.com/photo-1514525253440-b39345208668?q=80&w=2070&auto=format&fit=crop",
-        platforms: ["Spotify", "Amazon Music"]
+        genre: "Drama Telefilm",
+        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop",
+        platforms: ["Shortfundly"],
+        link: "https://web.shortfundly.com/short-films/the-pheonix-english-drama-telefilm"
     }
 ];
 

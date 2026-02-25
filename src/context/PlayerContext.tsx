@@ -7,6 +7,7 @@ type Track = {
     artist: string;
     image: string;
     audioUrl?: string; // Optional for now, using mock behavior
+    link?: string;
 };
 
 type PlayerContextType = {
